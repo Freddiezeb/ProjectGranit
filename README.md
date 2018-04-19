@@ -1,2 +1,2 @@
-# ProjectGranite
+# ProjectGranit
 Project for Javascript course
