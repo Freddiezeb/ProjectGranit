@@ -85,7 +85,12 @@ var data = {
     client.onConnectionLost = function(e) { console.log(e) };
 
     function subscribe() {
-      client.subscribe("IoTaP-lab/Linuxcomputer/Arduino/multiple");
+      client.subscribe("iotap-lab/computer_1/camera/axis_old_camera");
+      client.subscribe("iotap_lab/phone/sensmitter/sensmitter_1");
+      client.subscribe("iotap_lab/phone/sensmitter/sensmitter_2");
+      client.subscribe("iotap_lab/phone/sensmitter/sensmitter_3");
+      client.subscribe("iotap_lab/phone_1/phone/phone_1");
+//      client.subscribe("IoTaP-lab/Linuxcomputer/Arduino/multiple");
       console.log("subscribed");
     }
 
