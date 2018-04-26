@@ -85,11 +85,45 @@ var data = {
     client.onConnectionLost = function(e) { console.log(e) };
 
     function subscribe() {
+    //Freddie Helena
+        //Old movement Camera(audio alarm, movement direction)
       client.subscribe("iotap-lab/computer_1/camera/axis_old_camera");
+        
+        //Sensmitter (humidity, light level, pressure, temperature)
       client.subscribe("iotap_lab/phone/sensmitter/sensmitter_1");
       client.subscribe("iotap_lab/phone/sensmitter/sensmitter_2");
       client.subscribe("iotap_lab/phone/sensmitter/sensmitter_3");
+        
+    //Peter
+        //Phone (movement, sound level)
       client.subscribe("iotap_lab/phone_1/phone/phone_1");
+        
+        //Roof Mounted Camera (In/Out)
+      client.subscribe("iotap_lab/raspberry_pi_1/camera/cameraACCC8E7E6E9F");
+        
+        //Eye Contact Camera (detected faces, eye contacts, looking towards camera)
+      client.subscribe("iotap_lab/computer_1/camera/eye_contact_1");
+        
+    //Filip max
+        //Arduino Due (audio alarm, distance, humidity, x level light, movement, sond level, temerature)
+      client.subscribe("iotap_lab/raspberry_pi_1/multisensor/arduino_due_1");
+        
+        //Philips hue (power state, brightness, hue, saturation)
+      client.subscribe("iotap_lab/arduino_1/colored_light/hue_1");
+        
+        //Motorized (blinds state)
+      client.subscribe("iotap_lab/arduino_2/motorized_blinds/blinds_1");
+        
+        //Divs
+            //person count(count,  pred accuracy) 
+      client.subscribe("iotap_lab/divs/person_count");
+            //lab state(silent, convo/meeting, gathering)
+      client.subscribe("iotap_lab/divs/lab_state");
+        
+        //Combine for the divs?
+      client.subscribe("iotap_lab/phone_1/phone/phone_1/user_feedback");
+      client.subscribe("iotap_lab/phone_1/phone/phone_1/user_feedback");
+        
 //      client.subscribe("IoTaP-lab/Linuxcomputer/Arduino/multiple");
       console.log("subscribed");
     }
