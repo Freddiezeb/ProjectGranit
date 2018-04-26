@@ -1,0 +1,126 @@
+#wrapper{
+  width: 1024px;
+  //height: ;
+  align-items: center;
+  margin: 0 auto;
+}
+#box{
+  /*width: 900px;
+  height: 900px;
+  margin: 0 auto;*/
+  margin-top: 20%;
+}
+.bubble{
+  width: 200px;
+  height: 200px;
+  color: white;
+  border-radius: 50%;
+  display: inline-block;
+  transition: transform 0.5s;
+}
+#air{
+  background-color: purple;
+}
+#air:hover{
+  transform: scale(1.5);
+}
+#activity{
+  background-color: blue;
+}
+#activity:hover{
+  transform: scale(1.5);
+}
+#camera{
+  background-color: orange;
+}
+#camera:hover{
+  transform: scale(1.5);
+}
+#divs{
+  background-color: green;
+}
+#divs:hover{
+  transform: scale(1.5);
+}
+#create{
+  background-color: red;
+}
+#create:hover{
+  transform: scale(1.5);
+}
+.bubble p{
+text-transform: uppercase;
+text-align: center;
+padding-top: 70px;
+font-size: 20px;
+}
+
+
+
+/* AIR */
+.headline{
+  text-align: center;
+}
+#box2{
+  width: 950px;
+  height: 300px;
+  margin: 0 auto;
+}
+.charts{
+  /*width: 300px;
+  height: 200px;
+  margin: 0 auto;*/
+  display: inline-block;
+}
+#temp, #humidity, #pressure, #light, #movement, #sound, #distance, #number {
+  width: 300px;
+  height: 200px;
+  text-align: center;
+  margin-bottom: 10%;
+}
+#temp img, #humidity img, #light img, #movement img, #sound img, #number img{
+  width: 300px;
+  //height: 100px;
+  display: block;
+}
+#pressure img, #distance img{
+  width: 150px;
+  //height: 100px;
+  margin: 0 auto;
+  align-items: center;
+  display: block;
+}
+#radett, #radtva{
+  width: 650px;
+  margin: 0 auto;
+}
+
+
+/* DIVS */
+#box3{
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+/* selected link */
+a:active {
+    color: white;
+    text-decoration: none;
+}
