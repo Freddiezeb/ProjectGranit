@@ -163,11 +163,69 @@ var data = {
             return
         } 
     }
-    
+
+
+
+   var first = true
+   
     function arduino_due_1(result)
     {
-        console.log("arduino_due_1")
         
+        console.log("arduino_due_1")
+        if(first)
+            {
+                var x = document.createElement("TABLE");
+                x.setAttribute("id", "table");
+                document.body.appendChild(x);
+        
+                var yTemperature = document.createElement("TH");
+                var yMovement = document.createElement("TH");
+                var ySound = document.createElement("TH");
+                
+                yTemperature.setAttribute("id", "temperature");
+                document.getElementById("table").appendChild(yTemperature);
+                yTemperature.append("temperature")
+                
+                yMovement.setAttribute("id", "movement");
+                document.getElementById("table").appendChild(yMovement);
+                yMovement.append("movement")
+                
+                ySound.setAttribute("id", "sound");
+                document.getElementById("table").appendChild(ySound);
+                ySound.append("sound")
+                
+                
+                
+                
+                first =false
+            }
+   
+
+    var zTemperature = document.createElement("TR");
+    var zMovement = document.createElement("TR");
+    var zSound = document.createElement("TR");
+        
+   
+    document.getElementById("temperature").appendChild(zTemperature); 
+    document.getElementById("movement").appendChild(zMovement);         
+    document.getElementById("sound").appendChild(zSound);
+        
+        
+    var temperature = document.createTextNode(result.data.temperature);
+    zTemperature.appendChild(temperature);
+    document.getElementById("temperature").appendChild(zTemperature);
+        
+    var movement = document.createTextNode(result.data.movement);
+    zMovement.appendChild(movement);
+    document.getElementById("movement").appendChild(zMovement);
+        
+    var sound = document.createTextNode(result.data.sound_level);
+    zSound.appendChild(sound);
+    document.getElementById("sound").appendChild(zSound);    
+   
+        
+
+       
     }
 
     function hue_1(result)
