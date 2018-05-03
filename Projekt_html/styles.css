@@ -1,9 +1,12 @@
-body {
+
+#bg {
     background-image: url("images/bg.jpg");
+    background-repeat: repeat-y; /* for vertical repeat */
+    background-size: cover;
 }
 #wrapper{
   width: 1024px;
-  //height: ;
+  height: 100vh;
   align-items: center;
   margin: 0 auto;
 }
@@ -11,7 +14,7 @@ body {
   /*width: 900px;
   height: 900px;
   margin: 0 auto;*/
-  margin-top: 20%;
+  padding-top: 20%;
 }
 .bubble{
   width: 200px;
