@@ -6,16 +6,67 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+    
+    <div class="vertical-menu">
+      <div id="air" class="bubble2">
+        <a href="air.html"><p>AIR</p></a>
+      </div>
+      <div id="activity" class="bubble2">
+        <a href="#" class="active"><p>ACTIVITY</p></a>
+      </div>
+      <div id="camera" class="bubble2">
+        <a href=" "><p>camera</p></a>
+      </div>
+      <div id="divs" class="bubble2">
+        <a href="divs.html"><p>divs</p></a>
+      </div>
+      <div id="create" class="bubble2">
+        <a href=" "><p>create
+          your
+          own </p></a>
+      </div>
+    </div>
 
   <div id="wrapper">
     <div id="box2">
-      <div class="headline">
+      <div class="headline2">
         <h1>ACTIVITY</h1>
       </div>
+        
+    <!-- RAD ETT -->
+    <!-- LIGHT -->  
       <div id="radett">
         <div id="light" class="charts">
           <p>Light level </p>
-          <img src="images/lineChart.png">
+                      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540]
+        ]);
+
+        var options = {
+          title: 'Company Performance',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+            <div id="curve_chart" style="width: 360px; height: 200px"></div>
+            
+            
+            
         </div>
         <div id="movement" class="charts">
           <p>Movement</p>
@@ -23,9 +74,43 @@
         </div>
       </div>
       <div id="radtva">
+          
+          
+          
+          
         <div id="sound" class="charts">
           <p>Sound level</p>
-          <img src="images/movementChart.png">
+<!--          <img src="images/movementChart.png">-->
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540]
+        ]);
+
+        var options = {
+          title: 'Company Performance',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+            <div id="curve_chart" style="width: 360px; height: 200px"></div>
+            
+            
+            
+            
         </div>
         <div id="distance" class="charts">
           <p>Distance</p>

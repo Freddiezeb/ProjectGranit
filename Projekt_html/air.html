@@ -6,24 +6,145 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+    
+    <div class="vertical-menu">
+      <div id="air" class="bubble2">
+        <a href="#" class="active"><p>AIR</p></a>
+      </div>
+      <div id="activity" class="bubble2">
+        <a href="activity.html"><p>ACTIVITY</p></a>
+      </div>
+      <div id="camera" class="bubble2">
+        <a href=" "><p>camera</p></a>
+      </div>
+      <div id="divs" class="bubble2">
+        <a href="divs.html"><p>divs</p></a>
+      </div>
+      <div id="create" class="bubble2">
+        <a href=" "><p>create
+          your
+          own </p></a>
+      </div>
+    </div>
 
   <div id="wrapper">
     <div id="box2">
       <div class="headline">
         <h1>AIR</h1>
       </div>
+        
+        <!-- TEMPERATUR -->
       <div id="temp" class="charts">
         <p>Temperature</p>
-        <img src="images/lineChart.png">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540]
+        ]);
+
+        var options = {
+          title: 'Company Performance',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+            <div id="curve_chart" style="width: 360px; height: 200px"></div>
       </div>
+        
+        
+        
+    <!-- PRESSURE -->
       <div id="pressure" class="charts">
         <p>Pressure</p>
-        <img src="images/pressureChart.png">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   <script type="text/javascript">
+      google.charts.load('current', {'packages':['gauge']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['Memory', 80],
+//          ['CPU', 55],
+//          ['Network', 68]
+        ]);
+
+        var options = {
+          width: 400, height: 120,
+          redFrom: 90, redTo: 100,
+          yellowFrom:75, yellowTo: 90,
+          minorTicks: 5
+        };
+
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+
+        setInterval(function() {
+          data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
+          chart.draw(data, options);
+        }, 13000);
+//        setInterval(function() {
+//          data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
+//          chart.draw(data, options);
+//        }, 5000);
+//        setInterval(function() {
+//          data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
+//          chart.draw(data, options);
+//        }, 26000);
+      }
+    </script>
+        <div id="chart_div" style="width: 400px; height: 120px;"></div>
       </div>
+        
+        
+        
+    <!-- HUMIDITY -->
       <div id="humidity" class="charts">
         <p>Humidity</p>
-        <img src="images/lineChart.png">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540]
+        ]);
+
+        var options = {
+          title: 'Company Performance',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chartHumidity = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chartHumidity.draw(data, options);
+      }
+    </script>
+            <div id="curve_chart" style="width: 360px; height: 200px"></div>
       </div>
+        
+        
     </div>
   </div>
 

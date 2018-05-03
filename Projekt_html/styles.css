@@ -1,3 +1,6 @@
+body {
+    background-image: url("images/bg.jpg");
+}
 #wrapper{
   width: 1024px;
   //height: ;
@@ -59,25 +62,61 @@ font-size: 20px;
 
 /* AIR */
 .headline{
+  width:60px;
+  height:50px;
+  margin-left: 424px;
+}
+#pressure{
+    width: 125px;
+  height: 200px;
   text-align: center;
+  margin-bottom: 10%;
+}
+
+/* ACTIVITY */
+.headline2{
+  width:60px;
+  height:50px;
+  margin-left: 380px;
 }
 #box2{
-  width: 950px;
+  width: 1000px;
   height: 300px;
   margin: 0 auto;
 }
+#radett, #radtva{
+  width: 800px;
+  margin: 0 auto;
+}
+#light, #movement{
+   width: 380px;
+  height: 200px;
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+/* DIVS */
+.headline3{
+  width:220px;
+  height:50px;
+  margin-left: 390px;
+}
+
+
+
 .charts{
   /*width: 300px;
   height: 200px;
   margin: 0 auto;*/
   display: inline-block;
 }
-#temp, #humidity, #pressure, #light, #movement, #sound, #distance, #number {
-  width: 300px;
+#temp, #humidity, #sound, #distance, #number {
+  width: 380px;
   height: 200px;
   text-align: center;
   margin-bottom: 10%;
 }
+
 #temp img, #humidity img, #light img, #movement img, #sound img, #number img{
   width: 300px;
   //height: 100px;
@@ -90,18 +129,11 @@ font-size: 20px;
   align-items: center;
   display: block;
 }
-#radett, #radtva{
-  width: 650px;
-  margin: 0 auto;
-}
 
 
-/* DIVS */
-#box3{
-  width: 300px;
-  height: 300px;
-  margin: 0 auto;
-}
+
+
+/* LINKS */
 a:link {
     color: white;
     text-decoration: none;
@@ -123,4 +155,73 @@ a:hover {
 a:active {
     color: white;
     text-decoration: none;
+}
+
+
+
+/* SMALL NAVBAR */
+.vertical-menu {
+    width: 50px;
+  height: 50px;
+  color: white;
+  border-radius: 50%;
+  display: block;
+    margin-top: 15%;
+
+}
+/* .vertical-menu a {
+    background-color: #eee; 
+    color: black; 
+    display: block; 
+    padding: 12px; 
+    text-decoration: none; 
+} */
+.vertical-menu a:hover {
+    color: white;
+    text-decoration: none;
+}
+.vertical-menu a.active {
+    color: black;
+    text-decoration: none;
+    
+}
+.bubble2{
+  width: 50px;
+  height: 50px;
+  color: white;
+  border-radius: 50%;
+  display: block;
+  transition: transform 0.5s; 
+}
+.bubble2 p{
+text-transform: uppercase;
+text-align: center;
+padding-top: 20px;
+font-size: 8px;
+}
+#box2{
+   margin-top: -20%;
+}
+
+
+/* SOUND */
+/*
+body {
+  font: 10px sans-serif;
+}
+*/
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.area {
+  fill: steelblue;
 }
