@@ -141,8 +141,6 @@ function user_feedback(result)
     console.log("user_feedback")
 }
 
-
-
 function AddToArray(array, data, maxLenght)
 {
     array.push(data);

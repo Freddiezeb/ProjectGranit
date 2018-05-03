@@ -4,13 +4,6 @@ function lineChart(array1, array2, names)
     google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
-        //var myDate = new Date(result.timestamp * 1000);
-
-        //Use AddToArray to load in all the data 
-//        AddToArray(temperatureArray, result.data.temperature, 8);
-//        AddToArray(soundArray, result.data.sound_level, 8);
-//        AddToArray(timeArray, myDate, 8);
-
         var data = google.visualization.arrayToDataTable([
             [names[0]   ,   names[1] ],
             [array1[0]    ,    array2[0] ],
@@ -29,5 +22,4 @@ function lineChart(array1, array2, names)
         var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
         chart.draw(data, options);
     }
-
 }
