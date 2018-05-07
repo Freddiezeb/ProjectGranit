@@ -1,8 +1,7 @@
 var temperatureArray = [];
 var soundArray = [];
 var timeArray = [];
-
-var first = true;
+lineChart(null, 'temperature_chart');
 
 function CallFunction(functionName, functionArgument)
 {
@@ -20,65 +19,41 @@ function CallFunction(functionName, functionArgument)
 function arduino_due_1(result)
 {
     console.log("arduino_due_1")
-    if(first)
-    {
-        var x = document.createElement("TABLE");
-        x.setAttribute("id", "table");
-        document.body.appendChild(x);
-
-        var yTemperature = document.createElement("TH");
-        var yMovement = document.createElement("TH");
-        var ySound = document.createElement("TH");
-
-        yTemperature.setAttribute("id", "temperature");
-        document.getElementById("table").appendChild(yTemperature);
-        yTemperature.append("temperature")
-
-        yMovement.setAttribute("id", "movement");
-        document.getElementById("table").appendChild(yMovement);
-        yMovement.append("movement")
-
-        ySound.setAttribute("id", "sound");
-        document.getElementById("table").appendChild(ySound);
-        ySound.append("sound")
-
-        first =false
-    }
     
-        //Start here
-        var myDate = new Date(result.timestamp * 1000);
-
-        //Use AddToArray to load in all the data 
-        AddToArray(temperatureArray, result.data.temperature, 8);
-        AddToArray(soundArray, result.data.sound_level, 8);
-        AddToArray(timeArray, myDate, 8);
+    //Gets the current date from when we got our response
+    var myDate = new Date(result.timestamp * 1000);
     
+    //Sets the length of how much data will be displayed
+    var maxLength = 8;  
+
+    //Use AddToArray to load in all the data 
+    AddToArray(temperatureArray, result.data.temperature, maxLength);
+    //AddToArray(soundArray, result.data.sound_level, maxLength);
+    AddToArray(timeArray, myDate, maxLength);
+
+    //Array with colum and row names 
     var names = [
         "Time",
-        "Sound"
+        "arduino_due_1"
     ]
     
-    lineChart(timeArray, soundArray, names);
-
-    var zTemperature = document.createElement("TR");
-    var zMovement = document.createElement("TR");
-    var zSound = document.createElement("TR");
-
-    document.getElementById("temperature").appendChild(zTemperature); 
-    document.getElementById("movement").appendChild(zMovement);         
-    document.getElementById("sound").appendChild(zSound);
-
-    var temperature = document.createTextNode(result.data.temperature);
-    zTemperature.appendChild(temperature);
-    document.getElementById("temperature").appendChild(zTemperature);
-
-    var movement = document.createTextNode(result.data.movement);
-    zMovement.appendChild(movement);
-    document.getElementById("movement").appendChild(zMovement);
-
-    var sound = document.createTextNode(result.data.sound_level);
-    zSound.appendChild(sound);
-    document.getElementById("sound").appendChild(zSound);
+    //Array that start with the names from above
+    //Then we fill it with the data from arduino_due_1
+    var arduino_due_1_Array = [];
+    for(var i = 0; i < maxLength + 1; i++)
+    {
+        if(i == 0)
+        {
+            arduino_due_1_Array.push([names[0], names[1]]);
+        }
+        else
+        {
+            arduino_due_1_Array.push([timeArray[i - 1], temperatureArray[i - 1]]);        
+        }
+    }
+    
+    //Draw the chart
+    lineChart(arduino_due_1_Array, "temperature_chart");
 }
 
 function hue_1(result)
