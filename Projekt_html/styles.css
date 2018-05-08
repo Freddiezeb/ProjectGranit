@@ -1,6 +1,6 @@
 
 #bg {
-    background-image: url("images/bg.jpg");
+    background-image: url("images/bgPic.jpg");
     background-repeat: repeat-y; /* for vertical repeat */
     background-size: cover;
 }
@@ -25,34 +25,50 @@
   transition: transform 0.5s;
 }
 #air{
-  background-color: purple;
+  background-color: black;
+  background: radial-gradient(circle at 100px 100px, #8188c1, #2c2f49);
+  box-shadow: 0 8px 20px -6px black;
 }
 #air:hover{
   transform: scale(1.5);
 }
 #activity{
-  background-color: blue;
+  background-color: #e6474a;
+  background: radial-gradient(circle at 100px 100px, #ff7a7c, #c61b1e);
+  box-shadow: 0 8px 20px -6px black;
 }
 #activity:hover{
   transform: scale(1.5);
 }
 #camera{
-  background-color: orange;
+  background-color: #8e384a;
+  background: radial-gradient(circle at 100px 100px, #e25a77, #7a2537);
+  box-shadow: 0 8px 20px -6px black;
 }
 #camera:hover{
   transform: scale(1.5);
 }
 #divs{
-  background-color: green;
+  background-color: #523649;
+  background: radial-gradient(circle at 100px 100px, #ba84a8, #523649);
+  box-shadow: 0 8px 20px -6px black;
 }
 #divs:hover{
   transform: scale(1.5);
 }
 #create{
-  background-color: red;
+  background-color: #b295a8;
+  background: radial-gradient(circle at 100px 100px, #d8bccf, #75616e);
+  box-shadow: 0 8px 20px -6px black;
 }
 #create:hover{
   transform: scale(1.5);
+}
+p{
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  line-height: 1.3;
+  //text-shadow: 1px 1px 2px 	#808080;
 }
 .bubble p{
 text-transform: uppercase;
@@ -63,14 +79,23 @@ font-size: 20px;
 
 
 
+
 /* AIR */
+#airWrapper{
+  background-color: #2c2f49;
+  position: absolute;
+  width: 100vw;
+}
+.wrapper{
+  //margin-top: 80%;
+}
 .headline{
   width:60px;
   height:50px;
   margin-left: 424px;
 }
 #pressure{
-    width: 125px;
+  width: 125px;
   height: 200px;
   text-align: center;
   margin-bottom: 10%;
@@ -173,11 +198,11 @@ a:active {
 
 }
 /* .vertical-menu a {
-    background-color: #eee; 
-    color: black; 
-    display: block; 
-    padding: 12px; 
-    text-decoration: none; 
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
 } */
 .vertical-menu a:hover {
     color: white;
@@ -186,7 +211,7 @@ a:active {
 .vertical-menu a.active {
     color: black;
     text-decoration: none;
-    
+
 }
 .bubble2{
   width: 50px;
@@ -194,7 +219,7 @@ a:active {
   color: white;
   border-radius: 50%;
   display: block;
-  transition: transform 0.5s; 
+  transition: transform 0.5s;
 }
 .bubble2 p{
 text-transform: uppercase;
