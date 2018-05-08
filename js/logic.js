@@ -7,11 +7,11 @@ new Vue({
     data: data
 });
 
-document.getElementById('send').addEventListener('click', function (e) {
-    var say = document.getElementById('say')
-    send(say.value);
-    say.value = '';
-});
+//document.getElementById('send').addEventListener('click', function (e) {
+//    var say = document.getElementById('say')
+//    send(say.value);
+//    say.value = '';
+//});
 
 function SigV4Utils(){}
 

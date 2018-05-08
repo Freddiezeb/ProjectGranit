@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="EN">
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="utf-8" http-equiv="encoding">
+        <link href="styles.css" rel="stylesheet" type="text/css">
+        <title></title>
+    </head>
+    <body>
+        <!-- External Scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/core-min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/hmac-min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/sha256-min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+        <script src="https://www.gstatic.com/charts/loader.js" type="text/javascript"></script>
+
+
+        <!-- VERTICAL NAV BAR -->
+        <div class="vertical-menu">
+            <div class="bubble2" id="air">
+                <a class="active" href="#">
+                    <p>AIR</p></a>
+            </div>
+            <div class="bubble2" id="activity">
+                <a href="activity.html">
+                    <p>ACTIVITY</p></a>
+            </div>
+            <div class="bubble2" id="camera">
+                <a href="">
+                    <p>camera</p></a>
+            </div>
+            <div class="bubble2" id="divs">
+                <a href="divs.html">
+                    <p>divs</p></a>
+            </div>
+            <div class="bubble2" id="create">
+                <a href="">
+                    <p>create your own</p></a>
+            </div>
+        </div>
+        <div id="wrapper">
+            <div id="box2">
+                <div class="headline">
+                    <h1>AIR</h1>
+                </div>
+
+                <!-- TEMPERATUR -->
+                <div class="charts" id="temp">
+                    <p>Temperature</p>
+                    <div id="temperature_chart" style="width: 360px; height: 200px"></div>
+                </div>
+
+                <!-- PRESSURE -->
+                <div class="charts" id="pressure">
+                    <p>Pressure</p>
+                    <div id="pressure_chart" style="width: 400px; height: 120px;"></div>
+                </div>
+
+                <!-- HUMIDITY -->
+                <div class="charts" id="humidity">
+                    <p>Humidity</p>
+                    <div id="test_chart" style="width: 360px; height: 200px"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Internal Scripts-->
+        <script src="js/lineChart.js" type="text/javascript"></script>
+        <script src="js/gaugeChart.js" type="text/javascript"></script>
+        <script src="js/testChart.js" type="text/javascript"></script>
+        <script src="js/logic.js" type="text/javascript"></script>
+        <script src="js/sortData.js" type="text/javascript"></script>
+    </body>
+</html>
