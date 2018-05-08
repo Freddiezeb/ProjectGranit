@@ -46,6 +46,16 @@ if(page == "divs.html")
 {
     histogramChart(null, "number_of_people_chart", null);
 }
+if(page == "custom.html")
+{
+    lineChart(null, 'temperature_chart', null);
+    lineChart(null, 'humidity_chart', null);
+    gaugeChart(null, "pressure_chart", null);
+    lineChart(null, "x_level_light_chart", null);
+    lineChart(null, "movement_chart", null);
+    lineChart(null, "sound_level_chart", null);
+    histogramChart(null, "number_of_people_chart", null);
+}
 
 function CallFunction(functionName, functionArgument)
 {

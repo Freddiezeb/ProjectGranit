@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="EN">
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="utf-8" http-equiv="encoding">
+        <link href="styles.css" rel="stylesheet" type="text/css">
+        <title></title>
+    </head>
+    <body>
+
+        <!-- External Scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/core-min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/hmac-min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/sha256-min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+        <script src="https://www.gstatic.com/charts/loader.js" type="text/javascript"></script>
+
+        <!-- VERTICAL NAV BAR -->
+        <div class="vertical-menu">
+            <div class="bubbleBorder" id="air" onclick="toggleChart('box4', 'air')">               <p>AIR</p></a>
+            </div>
+            <div class="bubbleBorder" id="activity" onclick="toggleChart('box3', 'activity')">               
+                <p>ACTIVITY</p></a>
+            </div>
+            <div class="bubbleBorder" id="camera" onclick="toggleChart('box5', 'camera')">
+                
+                <p>camera</p></a>
+            </div>
+            <div class="bubbleBorder" id="divs" onclick="toggleChart('box2', 'divs')">
+                
+                <p>divs</p></a>
+            </div>
+            <div class="bubble2" id="backBtn">
+                <a href="index.html">
+                    <p>Go back</p></a>
+            </div>
+        </div>
+
+        <div id="wrapper">
+           <!-- DIV CHART -->
+            <div id="box2" style="display: none">
+                <div class="headline3">
+                    <h1>DIVS OUTPUT</h1>
+                </div>
+
+                <!-- NUMBERS OF PEOPLE/ HISTORY -->
+                <div class="charts">
+                    <p>Number of people</p>
+                    <div id="number_of_people_chart" style="width: 900px; height: 500px;"></div>
+                </div>
+            </div>
+            <!-- ACTIVITY CHART -->
+            <div id="box3" style="display: none">
+                <div class="headline2">
+                    <h1>ACTIVITY</h1>
+                </div>
+
+                <!-- RAD ETT -->
+                <!-- LIGHT -->
+                <div id="radett">
+                    <div class="charts" id="light">
+                        <p>Light level</p>
+                        <div id="x_level_light_chart" style="width: 360px; height: 200px"></div>
+                    </div>
+
+                    <!-- MOVEMENT -->
+                    <div class="charts" id="movement">
+                        <p>Movement</p>
+                        <div id="movement_chart" style="width: 360px; height: 200px"></div>
+                    </div>
+                </div>
+                <div id="radtva">
+
+                    <!-- SOUND -->
+                    <div class="charts" id="sound">
+                        <p>Sound level</p>
+                        <div id="sound_level_chart" style="width: 360px; height: 200px"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- AIR CHART -->
+            <div id="box4" style="display: none">
+                <div class="headline">
+                    <h1>AIR</h1>
+                </div>
+
+                <!-- TEMPERATUR -->
+                <div class="charts" id="temp">
+                    <p>Temperature</p>
+                    <div id="temperature_chart" style="width: 360px; height: 200px"></div>
+                </div>
+
+                <!-- PRESSURE -->
+                <div class="charts" id="pressure">
+                    <p>Pressure</p>
+                    <div id="pressure_chart" style="width: 400px; height: 120px;"></div>
+                </div>
+
+                <!-- HUMIDITY -->
+                <div class="charts" id="humidity">
+                    <p>Humidity</p>
+                    <div id="humidity_chart" style="width: 360px; height: 200px"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Internal Scripts-->
+        <script src="js/customCharts.js" type="text/javascript"></script>
+        <script src="js/histogramChart.js" type="text/javascript"></script>
+        <script src="js/lineChart.js" type="text/javascript"></script>        
+        <script src="js/gaugeChart.js" type="text/javascript"></script>
+        <script src="js/updateCharts/updateTempChart.js" type="text/javascript"></script>
+        <script src="js/updateCharts/updateHumidityChart.js" type="text/javascript"></script>
+        <script src="js/updateCharts/updatePressureChart.js" type="text/javascript"></script>
+        <script src="js/updateCharts/updateLightLevelChart.js" type="text/javascript"></script>
+        <script src="js/updateCharts/updateMovementChart.js" type="text/javascript"></script>
+        <script src="js/updateCharts/updateSoundLevelChart.js" type="text/javascript"></script>
+        <script src="js/logic.js" type="text/javascript"></script>
+        <script src="js/sortData.js" type="text/javascript"></script>
+
+    </body>
+</html>

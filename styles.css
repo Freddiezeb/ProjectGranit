@@ -54,6 +54,13 @@
 #create:hover{
   transform: scale(1.5);
 }
+#backBtn{
+  background-color: black;
+}
+#backBtn:hover{
+  transform: scale(1.5);
+}
+
 .bubble p{
 text-transform: uppercase;
 text-align: center;
@@ -83,6 +90,21 @@ font-size: 20px;
   margin-left: 380px;
 }
 #box2{
+  width: 1000px;
+  height: 300px;
+  margin: 0 auto;
+}
+#box3{
+  width: 1000px;
+  height: 300px;
+  margin: 0 auto;
+}
+#box4{
+  width: 1000px;
+  height: 300px;
+  margin: 0 auto;
+}
+#box5{
   width: 1000px;
   height: 300px;
   margin: 0 auto;
@@ -202,6 +224,26 @@ text-align: center;
 padding-top: 20px;
 font-size: 8px;
 }
+.bubbleBorder{
+  width: 47px;
+  height: 47px;
+  color: white;
+  border-radius: 50%;
+  display: block;
+  transition: transform 0.5s; 
+    border: 2px solid transparent;
+    -moz-border-radius:50%;
+    -webkit-border-radius: 50%;
+    margin-top: 7px;
+}
+.bubbleBorder p{
+text-transform: uppercase;
+text-align: center;
+padding-top: 12px;
+font-size: 8px;
+}
+
+
 #box2{
    margin-top: -20%;
 }
