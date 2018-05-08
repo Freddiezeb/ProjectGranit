@@ -1,59 +1,85 @@
+//Arrays that are being used in update...chart.js
 var temperatureArray = [];
+var temperatureTimeArray = [];
+
+var pressureArray = [];
+
+var humidityArray = [];
+var humidityTimeArray = [];
+
+var lightLevelArray = [];
+var lightLevelTimeArray = [];
+
 var soundArray = [];
-var timeArray = [];
-lineChart(null, 'temperature_chart');
+var soundTimeArray = [];
+
+var movementArray = [];
+var movementTimeArray = [];
+
+//var numberOfPeopleArray = [];
+//var numberOfPeopleTimeArray = [];
+//var peopleCounter = 0;
+
+//Gives us the name of the current HTML.
+//Must check if we are in the correct HTML file 
+//Otherwise errors will occur
+var path = window.location.pathname;
+var page = path.split("/").pop();
+console.log( page );
+
+//Initializing empty charts
+if(page == "air.html")
+{
+    lineChart(null, 'temperature_chart', null);
+    lineChart(null, 'humidity_chart', null);
+    gaugeChart(null, "pressure_chart", null);
+}
+
+if(page == "activity.html")
+{
+    lineChart(null, "x_level_light_chart", null);
+    lineChart(null, "movement_chart", null);
+    lineChart(null, "sound_level_chart", null);
+}
+
+if(page == "divs.html")
+{
+    histogramChart(null, "number_of_people_chart", null);
+}
 
 function CallFunction(functionName, functionArgument)
 {
     var func = window[functionName](functionArgument)
     if(typeof func === "function")
     {
-        func.apply(window, functionArgument)
+        func.apply(window, functionArgument);
     }
     else
     {
-        return
+        return;
     } 
 }
 
 function arduino_due_1(result)
 {
-    console.log("arduino_due_1")
-    
-    //Gets the current date from when we got our response
-    var myDate = new Date(result.timestamp * 1000);
-    
-    //Sets the length of how much data will be displayed
-    var maxLength = 8;  
+    console.log("arduino_due_1");
+    console.log(result);
 
-    //Use AddToArray to load in all the data 
-    AddToArray(temperatureArray, result.data.temperature, maxLength);
-    //AddToArray(soundArray, result.data.sound_level, maxLength);
-    AddToArray(timeArray, myDate, maxLength);
-
-    //Array with colum and row names 
-    var names = [
-        "Time",
-        "arduino_due_1"
-    ]
-    
-    //Array that start with the names from above
-    //Then we fill it with the data from arduino_due_1
-    var arduino_due_1_Array = [];
-    for(var i = 0; i < maxLength + 1; i++)
+    if(page == "air.html")
     {
-        if(i == 0)
-        {
-            arduino_due_1_Array.push([names[0], names[1]]);
-        }
-        else
-        {
-            arduino_due_1_Array.push([timeArray[i - 1], temperatureArray[i - 1]]);        
-        }
+        updateTemperatureChart(result, null, null, null);
+        
+        //FIXME: Pressure needs the right results from sensmitters
+        updatePressureChart(null, null, null);
+        updateHumidityChart(result, null, null, null);
     }
-    
-    //Draw the chart
-    lineChart(arduino_due_1_Array, "temperature_chart");
+
+    if(page == "activity.html")
+        {
+          updateLightLevelChart(result, null, null, null);  
+          updateSoundLevelChart(result, null, null, null);  
+          updateMovementChart(result, null, null, null);  
+        }
 }
 
 function hue_1(result)
