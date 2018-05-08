@@ -25,31 +25,31 @@
   transition: transform 0.5s;
 }
 #air{
-  background-color: purple;
+  background-color: #103339;
 }
 #air:hover{
   transform: scale(1.5);
 }
 #activity{
-  background-color: blue;
+  background-color: #264750;
 }
 #activity:hover{
   transform: scale(1.5);
 }
 #camera{
-  background-color: orange;
+  background-color: #5e3f50;
 }
 #camera:hover{
   transform: scale(1.5);
 }
 #divs{
-  background-color: green;
+  background-color: #7b3551;
 }
 #divs:hover{
   transform: scale(1.5);
 }
 #create{
-  background-color: red;
+  background-color: #c42f59;
 }
 #create:hover{
   transform: scale(1.5);
