@@ -1,6 +1,6 @@
 
 #bg {
-    background-image: url("images/bgPic.jpg");
+    background-image: url("../Images/bgPic.jpg");
     background-repeat: repeat-y; /* for vertical repeat */
     background-size: cover;
 }
