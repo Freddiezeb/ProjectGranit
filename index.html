@@ -4,9 +4,11 @@
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
   <meta content="utf-8" http-equiv="encoding">
   <link rel="stylesheet" type="text/css" href="styles.css">
+  <!-- Jquery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
- 
+
         <!-- External Scripts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.min.js" type="text/javascript"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js" type="text/javascript"></script>
@@ -22,31 +24,38 @@
         <script src="js/sortData.js"></script>
         <script src="js/lineChart.js"></script>
 <!--        <script src="js/logic.js"></script>-->
- 
-  <div id="bg">
 
-  <div id="wrapper">
-    <div id="box">
-      <div id="air" class="bubble">
-        <a href="air.html"><p>AIR</p></a>
-      </div>
-      <div id="activity" class="bubble">
-        <a href="activity.html"><p>ACTIVITY</p></a>
-      </div>
-      <div id="camera" class="bubble">
-        <a href=" "><p>camera</p></a>
-      </div>
-      <div id="divs" class="bubble">
-        <a href="divs.html"><p>divs</p></a>
-      </div>
-      <div id="create" class="bubble">
-        <a href="custom.html"><p>create
-          your
-          own </p></a>
+  <div id="bg">
+    <div id="wrapper">
+      <div class="zoomViewport">
+        <div class="zoomContainer">
+          <div id="box">
+            <div id="air" class="bubble">
+              <p id="air_text">AIR</p>
+            </div>
+            <div id="activity" class="bubble">
+              <p id="activity_text">ACTIVITY</p>
+            </div>
+            <div id="camera" class="bubble">
+              <p id="camera_text">camera</p>
+            </div>
+            <div id="divs" class="bubble">
+              <p id="divs_text">divs</p>
+            </div>
+            <div id="create" class="bubble">
+              <p id="create_text">create
+                your
+                own </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  </div>
+  <!-- Library for animations-->
+  <script src="jquery.zoomooz.min.js"></script>-->
+  <!-- Script for animations-->
+  <script  type="text/javascript" src="animations.js"></script>
 
 </body>
 </html>
