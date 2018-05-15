@@ -1,0 +1,39 @@
+.select {
+  font-family: Arial;
+  font-size: 12px;
+  border: 0;
+  background-color: #e4e4e4;
+  -webkit-box-shadow: -5px 5px 18px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: -5px 5px 18px 1px rgba(0,0,0,0.75);
+  box-shadow: -5px 5px 18px 1px rgba(0,0,0,0.75);
+  cursor: pointer;
+}
+
+.select2 {
+  margin-left: 20px;
+}
+
+#box {
+  display:flex;
+}
+
+.submit {
+  font-family: Arial;
+  font-size: 12px;
+  border: 0;
+  background-color: #e4e4e4;
+  -webkit-box-shadow: -5px 5px 18px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: -5px 5px 18px 1px rgba(0,0,0,0.75);
+  box-shadow: -5px 5px 18px 1px rgba(0,0,0,0.75);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: grey;
+}
+
+#button {
+  margin-left: 20px;
+  margin-top: 52px;
+}

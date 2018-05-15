@@ -14,7 +14,7 @@
   /*width: 900px;
   height: 900px;
   margin: 0 auto;*/
-  padding-top: calc(50% - 250px);;
+  /*padding-top: calc(50% - 250px);;*/
 }
 .bubble{
   width: 200px;
@@ -93,9 +93,10 @@ h1{
   width:60px;
   height:50px;
   margin-left: 424px;
+  margin-top: 80px;
 }
 #pressure{
-    width: 125px;
+  width: 125px;
   height: 200px;
   text-align: center;
   margin-bottom: 10%;
@@ -219,7 +220,7 @@ a:active {
   color: white;
   border-radius: 50%;
   display: block;
-    margin-top: 15%;
+  margin-top: 7%;
 
 }
 /* .vertical-menu a {
