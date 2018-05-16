@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.241.1.min.js"></script>
+
+        <script>
+
+            //            var AWS = require("aws-sdk");
+
+            AWS.config.update({
+                region: "us-east-1",
+                endpoint: 'a1y7d41s0oj85v.iot.us-east-1.amazonaws.com',
+                // accessKeyId default can be used while using the downloadable version of DynamoDB. 
+                // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
+                accessKeyId: "AKIAIVBVKDOAE3AASRHA",
+                // secretAccessKey default can be used while using the downloadable version of DynamoDB. 
+                // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
+                secretAccessKey: "Z46irEIjQf4JUF8fqH3n0mhiDGgbqI+LdyFYq6Hk"
+            });
+
+            var docClient = new AWS.DynamoDB.DocumentClient();
+            //
+            function scanData() {
+                document.getElementById('textarea').innerHTML += "Scanning table." + "\n";
+
+                var params = {
+                    TableName: "SensorsIOTAPLab",
+                    ProjectionExpression: "#uid, timestamp",
+                    FilterExpression: "#uid = :arduino_due_1",
+                    ExpressionAttributeNames: {
+                        "#uid": "uid",
+                    },
+                };
+
+                //                var params = {
+                //                    TableName: "SensorsIOTAPLab",
+                //                    Key: {
+                //                        "uid": "arduino_due_1"
+                //                    }
+                //                };
+                //
+                //                docClient.get(params, function(err, data) {
+                //                    if(err){
+                //                        callback(err, null);
+                //                    } else{
+                //                        callback(null, data);
+                //                        console.log(data);
+                //                    }
+                //                });
+
+                docClient.scan(params, onScan);
+
+                function onScan(err, data) {
+                    if (err) {
+                        document.getElementById('textarea').innerHTML += "Unable to scan the table: " + "\n" + JSON.stringify(err, undefined, 2);
+                    } else {
+                        // Print all the movies
+                        document.getElementById('textarea').innerHTML += "Scan succeeded. " + "\n";
+
+                        // Continue scanning if we have more movies (per scan 1MB limitation)
+                        document.getElementById('textarea').innerHTML += "Scanning for more..." + "\n";
+                        params.ExclusiveStartKey = data.LastEvaluatedKey;
+                        docClient.scan(params, onScan);            
+                    }
+                }
+            }
+
+        </script>
+    </head>
+
+    <body>
+        <input id="scanData" type="button" value="Scan" onclick="scanData();" />
+        <br><br>
+        <textarea readonly id= "textarea" style="width:400px; height:800px"></textarea>
+
+    </body>
+</html> 

@@ -1,3 +1,5 @@
+//Takes an array of data, the element is where we want to display the chart,
+//and its possible to send in other options if the user dont want the default.
 function gaugeChart(array, element, options)
 {
     google.charts.load('current', {'packages':['gauge']});
@@ -12,8 +14,9 @@ function gaugeChart(array, element, options)
 
     function drawChart() {
         var data = google.visualization.arrayToDataTable(array);
-
         var chart = new google.visualization.Gauge(document.getElementById(element));
+        
+        //If we don't send in any options then we use the default options
         if(options === null)
         {
             options = {

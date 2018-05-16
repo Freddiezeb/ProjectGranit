@@ -1,3 +1,4 @@
+//This function gets data from all the sources that have anything "Humidity" related to it
 function updateHumidityChart(arduino_due_1_result, sensmitter_1_result, sensmitter_2_result, sensmitter_3_result)
 {
     //Gets the current date from when we got our response
