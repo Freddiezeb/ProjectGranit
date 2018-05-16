@@ -85,11 +85,20 @@ function arduino_due_1(result)
     }
 
     if(page == "activity.html")
-        {
+    {
           updateLightLevelChart(result, null, null, null);  
           updateSoundLevelChart(result, null, null, null);  
           updateMovementChart(result, null, null, null);  
-        }
+    }
+    if(page == "custom.html")
+    {
+        updateTemperatureChart(result, null, null, null);
+        updatePressureChart(null, null, null);
+        updateHumidityChart(result, null, null, null);
+        updateLightLevelChart(result, null, null, null);  
+        updateSoundLevelChart(result, null, null, null);  
+        updateMovementChart(result, null, null, null);
+    }
 }
 
 function hue_1(result)
