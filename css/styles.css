@@ -24,6 +24,16 @@
   display: inline-block;
   transition: transform 0.5s;
 }
+
+#backBtn {
+  box-shadow: 0 8px 20px -6px black;
+  margin-top: 60%;
+}
+
+#backBtn:hover{
+  transform: scale(1.5);
+}
+
 #air{
   background-color: black;
   background: radial-gradient(circle at 100px 100px, #8188c1, #2c2f49);
