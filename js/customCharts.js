@@ -2,7 +2,7 @@
 function toggleChart(chartName, btnName){
     var element = document.getElementById(chartName);
     var btn = document.getElementById(btnName);
-    console.log(btn);
+    //console.log(btn);
     if(element.style.display ==="none")
         {
             element.style.display = "block";
@@ -13,5 +13,5 @@ function toggleChart(chartName, btnName){
             element.style.display = "none";
             btn.style.border = "2px solid transparent";
         }
-    console.log(btn.className);
+    //console.log(btn.className);
 }
