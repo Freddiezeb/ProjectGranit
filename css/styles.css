@@ -25,15 +25,6 @@
   transition: transform 0.5s;
 }
 
-#backBtn {
-  box-shadow: 0 8px 20px -6px black;
-  margin-top: 60%;
-}
-
-#backBtn:hover{
-  transform: scale(1.5);
-}
-
 #air{
   background: radial-gradient(circle at 100px 100px, #245861, #103339);
   box-shadow: 0 8px 20px -6px black;
@@ -69,6 +60,17 @@
 #create:hover{
   transform: scale(1.5);
 }
+
+#backBtn {
+  background: radial-gradient(circle at 100px 100px, #ff8cac);
+  box-shadow: 0 8px 20px -6px black;
+  margin-top: 60%;
+}
+
+#backBtn:hover{
+  transform: scale(1.5);
+}
+
 p{
   font-family: 'Roboto', sans-serif;
   color: white;
@@ -201,13 +203,13 @@ h1{
     background-color:whitesmoke
 }
 #btnLight, #btnMovement, #btnSound{
-    background-color:paleturquoise
+    background-color: whitesmoke
 }
 #btnNrPpl{
-    background-color:lightgoldenrodyellow
+    background-color:whitesmoke
 }
 #backBtn{
-    background-color: indianred;
+    background-color: #d49fae;
     margin-top: 50px;
 }
 
@@ -278,7 +280,7 @@ a:active {
 text-transform: uppercase;
 text-align: center;
 padding-top: 20px;
-font-size: 8px;
+font-size: 7px;
 }
 .bubbleBorder{
   width: 47px;

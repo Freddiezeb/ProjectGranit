@@ -6,7 +6,7 @@ function toggleChart(chartName, btnName){
     if(element.style.display ==="none")
         {
             element.style.display = "block";
-            btn.style.border = "2px solid red";
+            btn.style.border = "2px solid #c42f59";
         }
     else
         {
