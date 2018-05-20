@@ -15,6 +15,8 @@ function updateTemperatureChart(arduino_due_1_result, sensmitter_1_result, sensm
         "Time",
         "arduino_due_1"
     ]
+    
+    var options = {legend:{position:'top'}}
 
     //Array that start with the names from above
     //Then we fill it with the data from arduino_due_1
@@ -32,5 +34,5 @@ function updateTemperatureChart(arduino_due_1_result, sensmitter_1_result, sensm
     }
 
     //Draw the chart
-    lineChart(arduino_due_1_Array, "temperature_chart", null);
+    lineChart(arduino_due_1_Array, "temperature_chart", options);
 }

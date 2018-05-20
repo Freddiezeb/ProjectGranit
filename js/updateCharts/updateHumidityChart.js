@@ -16,6 +16,8 @@ function updateHumidityChart(arduino_due_1_result, sensmitter_1_result, sensmitt
         "Time",
         "arduino_due_1"
     ]
+    
+    var options = {legend:{position:'top'}}
 
     //Array that start with the names from above
     //Then we fill it with the data from arduino_due_1
@@ -33,5 +35,5 @@ function updateHumidityChart(arduino_due_1_result, sensmitter_1_result, sensmitt
     }
 
     //Draw the chart
-    lineChart(arduino_due_1_Array, "humidity_chart", null);
+    lineChart(arduino_due_1_Array, "humidity_chart", options);
 }
