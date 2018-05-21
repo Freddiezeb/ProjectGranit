@@ -5,18 +5,18 @@ function updateHumidityChart(arduino_due_1_result, sensmitter_1_result, sensmitt
     var myDate = new Date(arduino_due_1_result.timestamp * 1000);
 
     //Sets the length of how much data will be displayed
-    var maxLength = 8;  
+    var maxLength = 8;
 
-    //Use AddToArray to load in all the data 
+    //Use AddToArray to load in all the data
     AddToArray(humidityArray, arduino_due_1_result.data.humidity, maxLength);
     AddToArray(humidityTimeArray, myDate, maxLength);
 
-    //Array with colum and row names 
+    //Array with colum and row names
     var names = [
         "Time",
         "arduino_due_1"
     ]
-    
+
     var options = {legend:{position:'top'}}
 
     //Array that start with the names from above
@@ -30,7 +30,7 @@ function updateHumidityChart(arduino_due_1_result, sensmitter_1_result, sensmitt
         }
         else
         {
-            arduino_due_1_Array.push([humidityTimeArray[i - 1], humidityArray[i - 1]]);        
+            arduino_due_1_Array.push([humidityTimeArray[i - 1], humidityArray[i - 1]]);
         }
     }
 

@@ -8,7 +8,7 @@ function updatePressureChart(sensmitter_1_result, sensmitter_2_result, sensmitte
 
     //Options for the pressure chart, these will override the default options
     var options = {
-        max: 200, 
+        max: 200,
         width: 400, height: 120,
         redFrom: 180, redTo: 200,
         yellowFrom: 150, yellowTo: 180,

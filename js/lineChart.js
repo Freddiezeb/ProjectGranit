@@ -15,11 +15,37 @@ function lineChart(array, element, options)
     function drawChart() {
         var data = google.visualization.arrayToDataTable(array);
         var chart = new google.visualization.LineChart(document.getElementById(element));
-        
+
         //If we don't send in any options then we use the default options
-        if(options === null)
-            chart.draw(data);
-        else
+        if(options === null){
+          options = {
+            //Backgroundcolor for linecharts
+            backgroundColor:'transparent',
+            //Horisontal axis
+            hAxis:{
+              //textstyle
+              textStyle: {
+              fontName: 'Times-Roman',
+              fontSize: 12,
+              // The color of the text.
+              color: '#fff'
+            }
+          },
+            //vertical axis
+            vAxis:{
+              //textstyle
+              textStyle: {
+              fontName: 'Times-Roman',
+              fontSize: 12,
+              // The color of the text.
+              color: '#fff'
+            }
+          }
+        }
+          chart.draw(data, options);
+        }
+        else{
             chart.draw(data, options);
+          }
     }
 }
