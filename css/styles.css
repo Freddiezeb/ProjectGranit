@@ -307,6 +307,16 @@ color: darkslategrey
    margin-top: -20%;
 }
 
+/* CREATE YOUR OWN */
+.icon, img{
+  height: 35px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 
 /* SOUND */
 /*
@@ -333,5 +343,5 @@ body {
 .no-copy{
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none; 
+  -ms-user-select: none;
 }
