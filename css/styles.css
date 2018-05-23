@@ -94,6 +94,169 @@ h1{
   font-weight: normal;
 }
 
+<<<<<<< HEAD
+=======
+
+
+/* AIR */
+#airBody{
+  background-image: url("../Images/bgPic1.png");
+  background-repeat: repeat-y; /* for vertical repeat */
+  background-size: cover;
+  //background-color: #245861;
+}
+.headline{
+  width:60px;
+  height:50px;
+  margin-left: 424px;
+  margin-top: 80px;
+}
+#pressure{
+  width: 125px;
+  height: 200px;
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+/* ACTIVITY */
+#activityBody{
+  background-image: url("../Images/bgPic2.png");
+  background-repeat: repeat-y; /* for vertical repeat */
+  background-size: cover;
+  //background-color: #517984;
+}
+.headline2{
+  width:60px;
+  height:50px;
+  margin-left: 380px;
+  margin-top: 80px;
+}
+#box2{
+  width: 1000px;
+  height: 300px;
+  margin: 0 auto;
+}
+#box3{
+  width: 1000px;
+  height: 300px;
+  margin: 0 auto;
+}
+#box4{
+  width: 1000px;
+  height: 300px;
+  margin: 0 auto;
+}
+#box5{
+  width: 1000px;
+  height: 300px;
+  margin: 0 auto;
+}
+#radett, #radtva{
+  width: 800px;
+  margin: 0 auto;
+}
+#light, #movement{
+   width: 380px;
+  height: 200px;
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+/* CAMERA*/
+#cameraBody{
+  background-color: #a3708d;
+}
+
+/* DIVS */
+#divsBody{
+  background-image: url("../Images/bgPic3.png");
+  background-repeat: repeat-y; /* for vertical repeat */
+  background-size: cover;
+  //background-color: #dea7c6;
+}
+.headline3{
+  width:220px;
+  height:50px;
+  margin-left: 390px;
+}
+
+/* CREATE*/
+#customBody{
+  background-image: url("../Images/bgPic4.png");
+  background-repeat: repeat-y; /* for vertical repeat */
+  background-size: cover;
+  //background-color: #f883a4;
+}
+
+
+.charts{
+  /*width: 300px;
+  height: 200px;
+  margin: 0 auto;*/
+  display: inline-block;
+}
+#temp, #humidity, #sound, #distance, #number {
+  width: 380px;
+  height: 200px;
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+#temp img, #humidity img, #light img, #movement img, #sound img, #number img{
+  width: 300px;
+  //height: 100px;
+  display: block;
+}
+#pressure img, #distance img{
+  width: 150px;
+  //height: 100px;
+  margin: 0 auto;
+  align-items: center;
+  display: block;
+}
+#btnTemperature, #btnPressure, #btnHumidity{
+    background-color:whitesmoke
+}
+#btnLight, #btnMovement, #btnSound{
+    background-color: whitesmoke
+}
+#btnNrPpl{
+    background-color:whitesmoke
+}
+#backBtn{
+    background-color: #d49fae;
+    margin-top: 50px;
+}
+
+
+
+/* LINKS */
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+/* selected link */
+a:active {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+>>>>>>> e89e4f4ff5fb7e9a8a74ae6312f2ca26c6a41c5f
 /* SMALL NAVBAR */
 .vertical-menu {
   width: 50px;
