@@ -94,10 +94,6 @@ h1{
   font-weight: normal;
 }
 
-<<<<<<< HEAD
-=======
-
-
 /* AIR */
 #airBody{
   background-image: url("../Images/bgPic1.png");
@@ -256,7 +252,7 @@ a:active {
 
 
 
->>>>>>> e89e4f4ff5fb7e9a8a74ae6312f2ca26c6a41c5f
+
 /* SMALL NAVBAR */
 .vertical-menu {
   width: 50px;
@@ -353,6 +349,7 @@ a:active {
 }
 .select1{
   margin-left: 60px;
+  margin-bottom: 5%;
 }
 #pressure{
   width: 500px;
