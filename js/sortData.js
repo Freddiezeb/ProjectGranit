@@ -16,6 +16,8 @@ var soundTimeArray = [];
 var movementArray = [];
 var movementTimeArray = [];
 
+fill("SensorsIOTAPLab");
+
 //var numberOfPeopleArray = [];
 //var numberOfPeopleTimeArray = [];
 //var peopleCounter = 0;
@@ -87,30 +89,30 @@ function arduino_due_1(result)
     //Everything displayed in air.html
     if(page == "air.html")
     {
-        updateTemperatureChart(result, null, null, null);
+        updateTemperatureChart(result, null, null, null, null);
         
         //FIXME: Pressure needs the right results from sensmitters
-        updatePressureChart(null, null, null);
-        updateHumidityChart(result, null, null, null);
+        updatePressureChart(null, null, null, null);
+        updateHumidityChart(result, null, null, null, null);
     }
 
     //Everything displayed in activity.html
     if(page == "activity.html")
     {
-          updateLightLevelChart(result, null, null, null);  
-          updateSoundLevelChart(result, null, null, null);  
-          updateMovementChart(result, null, null, null);  
+          updateLightLevelChart(result, null, null, null, null);  
+          updateSoundLevelChart(result, null, null, null, null);  
+          updateMovementChart(result, null, null, null, null);  
     }
     
     //Everything displayed in custom.html
     if(page == "custom.html")
     {
-        updateTemperatureChart(result, null, null, null);
-        updatePressureChart(null, null, null);
-        updateHumidityChart(result, null, null, null);
-        updateLightLevelChart(result, null, null, null);  
-        updateSoundLevelChart(result, null, null, null);  
-        updateMovementChart(result, null, null, null);
+        updateTemperatureChart(result, null, null, null, null);
+        updatePressureChart(null, null, null, null);
+        updateHumidityChart(result, null, null, null, null);
+        updateLightLevelChart(result, null, null, null, null);  
+        updateSoundLevelChart(result, null, null, null, null);  
+        updateMovementChart(result, null, null, null, null);
     }
 }
 

@@ -18,34 +18,35 @@ function lineChart(array, element, options)
 
         //If we don't send in any options then we use the default options
         if(options === null){
-          options = {
-            //Backgroundcolor for linecharts
-            backgroundColor:'transparent',
-            //Horisontal axis
-            hAxis:{
-              //textstyle
-              textStyle: {
-              fontName: 'Times-Roman',
-              fontSize: 12,
-              // The color of the text.
-              color: '#fff'
+            options = {
+                legend:{position:'top'},
+                //Backgroundcolor for linecharts
+                backgroundColor:'transparent',
+                //Horisontal axis
+                hAxis:{
+                    //textstyle
+                    textStyle: {
+                        fontName: 'Times-Roman',
+                        fontSize: 12,
+                        // The color of the text.
+                        color: '#fff'
+                    }
+                },
+                //vertical axis
+                vAxis:{
+                    //textstyle
+                    textStyle: {
+                        fontName: 'Times-Roman',
+                        fontSize: 12,
+                        // The color of the text.
+                        color: '#fff'
+                    }
+                }
             }
-          },
-            //vertical axis
-            vAxis:{
-              //textstyle
-              textStyle: {
-              fontName: 'Times-Roman',
-              fontSize: 12,
-              // The color of the text.
-              color: '#fff'
-            }
-          }
-        }
-          chart.draw(data, options);
+            chart.draw(data, options);
         }
         else{
             chart.draw(data, options);
-          }
+        }
     }
 }
