@@ -94,153 +94,6 @@ h1{
   font-weight: normal;
 }
 
-
-
-/* AIR */
-#airBody{
-  background-color: #245861;
-}
-.headline{
-  width:60px;
-  height:50px;
-  margin-left: 424px;
-  margin-top: 80px;
-}
-#pressure{
-  width: 125px;
-  height: 200px;
-  text-align: center;
-  margin-bottom: 10%;
-}
-
-/* ACTIVITY */
-#activityBody{
-  background-color: #517984;
-}
-.headline2{
-  width:60px;
-  height:50px;
-  margin-left: 380px;
-}
-#box2{
-  width: 1000px;
-  height: 300px;
-  margin: 0 auto;
-}
-#box3{
-  width: 1000px;
-  height: 300px;
-  margin: 0 auto;
-}
-#box4{
-  width: 1000px;
-  height: 300px;
-  margin: 0 auto;
-}
-#box5{
-  width: 1000px;
-  height: 300px;
-  margin: 0 auto;
-}
-#radett, #radtva{
-  width: 800px;
-  margin: 0 auto;
-}
-#light, #movement{
-   width: 380px;
-  height: 200px;
-  text-align: center;
-  margin-bottom: 10%;
-}
-
-/* CAMERA*/
-#cameraBody{
-  background-color: #a3708d;
-}
-
-/* DIVS */
-#divsBody{
-  background-color: #dea7c6;
-}
-.headline3{
-  width:220px;
-  height:50px;
-  margin-left: 390px;
-}
-
-/* CREATE*/
-#customBody{
-  background-color: #f883a4;
-}
-
-
-.charts{
-  /*width: 300px;
-  height: 200px;
-  margin: 0 auto;*/
-  display: inline-block;
-}
-#temp, #humidity, #sound, #distance, #number {
-  width: 380px;
-  height: 200px;
-  text-align: center;
-  margin-bottom: 10%;
-}
-
-#temp img, #humidity img, #light img, #movement img, #sound img, #number img{
-  width: 300px;
-  //height: 100px;
-  display: block;
-}
-#pressure img, #distance img{
-  width: 150px;
-  //height: 100px;
-  margin: 0 auto;
-  align-items: center;
-  display: block;
-}
-#btnTemperature, #btnPressure, #btnHumidity{
-    background-color:whitesmoke
-}
-#btnLight, #btnMovement, #btnSound{
-    background-color: whitesmoke
-}
-#btnNrPpl{
-    background-color:whitesmoke
-}
-#backBtn{
-    background-color: #d49fae;
-    margin-top: 50px;
-}
-
-
-
-/* LINKS */
-a:link {
-    color: white;
-    text-decoration: none;
-}
-
-/* visited link */
-a:visited {
-    color: white;
-    text-decoration: none;
-}
-
-/* mouse over link */
-a:hover {
-    color: white;
-    text-decoration: none;
-}
-
-/* selected link */
-a:active {
-    color: white;
-    text-decoration: none;
-}
-
-
-
 /* SMALL NAVBAR */
 .vertical-menu {
   width: 50px;
@@ -301,8 +154,117 @@ padding-top: 12px;
 font-size: 8px;
 color: darkslategrey
 }
+/* LINKS */
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+/* selected link */
+a:active {
+    color: white;
+    text-decoration: none;
+}
 
 
+
+/* AIR */
+#airBody{
+  background-color: #245861;
+}
+.headline h1{
+  margin-top: 10%;
+  text-align: center;
+}
+.select1{
+  margin-left: 60px;
+}
+#pressure{
+  width: 500px;
+  height: 260px;
+  display: block;
+  text-align: center;
+  margin: 5% auto 0% auto;
+}
+#pressure_chart{
+  width: 220px;
+  height: 220px;
+  display: block;
+  margin: 0 auto;
+}
+/*#radettair {
+  width: 1000px;
+  margin: 0 auto;
+}*/
+
+/* ACTIVITY */
+#activityBody{
+  background-color: #517984;
+}
+#box2{
+  width: 1000px;
+  height: 300px;
+  margin: 0 auto;
+}
+#radett, #radtva{
+  width: 1000px;
+  margin: 0 auto;
+}
+
+
+/* CAMERA*/
+#cameraBody{
+  background-color: #a3708d;
+}
+
+/* DIVS */
+#divsBody{
+  background-color: #dea7c6;
+}
+.headline3{
+  width:220px;
+  height:50px;
+  margin-left: 390px;
+}
+
+/* CREATE*/
+#customBody{
+  background-color: #f883a4;
+}
+.charts{
+  width: 490px;
+  height: 300px;
+  margin: 0 auto;
+  display: inline-block;
+}
+#temperature_chart, #humidity_chart, #x_level_light_chart, #movement_chart, #sound_level_chart{
+ margin-top: -40px;
+}
+#btnTemperature, #btnPressure, #btnHumidity{
+    background-color:whitesmoke
+}
+#btnLight, #btnMovement, #btnSound{
+    background-color: whitesmoke
+}
+#btnNrPpl{
+    background-color:whitesmoke
+}
+#backBtn{
+    background-color: #d49fae;
+    margin-top: 50px;
+}
 #box2{
    margin-top: -20%;
 }
@@ -316,30 +278,17 @@ color: darkslategrey
   top: 50%;
   transform: translateY(-50%);
 }
-
-
-/* SOUND */
-/*
-body {
-  font: 10px sans-serif;
-}
-*/
-
-.axis path,
-.axis line {
+.axis path, .axis line {
   fill: none;
   stroke: #000;
   shape-rendering: crispEdges;
 }
-
 .x.axis path {
   display: none;
 }
-
 .area {
   fill: steelblue;
 }
-
 .no-copy{
   -webkit-user-select: none;
   -moz-user-select: none;

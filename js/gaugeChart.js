@@ -15,17 +15,17 @@ function gaugeChart(array, element, options)
     function drawChart() {
         var data = google.visualization.arrayToDataTable(array);
         var chart = new google.visualization.Gauge(document.getElementById(element));
-        
+
         //If we don't send in any options then we use the default options
         if(options === null)
         {
             options = {
-                width: 400, height: 120,
+                width: 220, height: 220,
                 redFrom: 90, redTo: 100,
                 yellowFrom: 75, yellowTo: 90,
                 minorTicks: 5
             };
         }
         chart.draw(data, options);
-    }   
+    }
 }
