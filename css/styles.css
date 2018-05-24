@@ -97,8 +97,11 @@ h1{
 /* AIR */
 #airBody{
   background-image: url("../Images/bgPic1.png");
-  background-repeat: repeat-y; /* for vertical repeat */
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   //background-color: #245861;
 }
 .headline{
@@ -117,8 +120,11 @@ h1{
 /* ACTIVITY */
 #activityBody{
   background-image: url("../Images/bgPic2.png");
-  background-repeat: repeat-y; /* for vertical repeat */
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   //background-color: #517984;
 }
 .headline2{
@@ -166,8 +172,11 @@ h1{
 /* DIVS */
 #divsBody{
   background-image: url("../Images/bgPic3.png");
-  background-repeat: repeat-y; /* for vertical repeat */
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   //background-color: #dea7c6;
 }
 .headline3{
@@ -179,8 +188,11 @@ h1{
 /* CREATE*/
 #customBody{
   background-image: url("../Images/bgPic4.png");
-  background-repeat: repeat-y; /* for vertical repeat */
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   //background-color: #f883a4;
 }
 
