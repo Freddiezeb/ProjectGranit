@@ -26,7 +26,7 @@ function lineChart(array, element, options)
                 hAxis:{
                     //textstyle
                     textStyle: {
-                        fontName: 'Times-Roman',
+                        fontName: 'Roboto',
                         fontSize: 12,
                         // The color of the text.
                         color: '#fff'
@@ -36,7 +36,7 @@ function lineChart(array, element, options)
                 vAxis:{
                     //textstyle
                     textStyle: {
-                        fontName: 'Times-Roman',
+                        fontName: 'Roboto',
                         fontSize: 12,
                         // The color of the text.
                         color: '#fff'

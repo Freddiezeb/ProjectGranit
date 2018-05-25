@@ -96,8 +96,11 @@ h1{
 /* AIR */
 #airBody{
   background-image: url("../Images/bgPic1.png");
-  background-repeat: repeat-y; /* for vertical repeat */
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 .headline h1{
   margin-top: 10%;
@@ -124,8 +127,18 @@ h1{
 /* ACTIVITY */
 #activityBody{
   background-image: url("../Images/bgPic2.png");
-  background-repeat: repeat-y; /* for vertical repeat */
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
+}
+.headline2{
+  width:60px;
+  height:50px;
+  //margin-left: 380px;
+  margin-top: 80px;
+
 }
 #light, #movement{
   width: 490px;
@@ -146,25 +159,32 @@ h1{
 /* CAMERA*/
 #cameraBody{
   background-color: #a3708d;
+  background-attachment: fixed;
 }
 
 /* DIVS */
 #divsBody{
   background-image: url("../Images/bgPic3.png");
-  background-repeat: repeat-y; /* for vertical repeat */
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
-.headline3{
+/*.headline3{
   width:220px;
   height:50px;
   margin-left: 390px;
-}
+}*/
 
 /* CREATE*/
 #customBody{
   background-image: url("../Images/bgPic4.png");
-  background-repeat: repeat-y; /* for vertical repeat */
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 #temp, #humidity, #sound, #distance, #number {
   width: 490px;
@@ -175,6 +195,8 @@ h1{
 .charts{
   width: 490px;
   height: 300px;
+  margin-left: 0% !important;
+  margin-top: 0% !important;
   margin: 0 auto;
   display: inline-block;
 }
@@ -182,13 +204,13 @@ h1{
  margin-top: -40px;
 }
 #btnTemperature, #btnPressure, #btnHumidity{
-    background-color:whitesmoke
+    background-color: whitesmoke
 }
 #btnLight, #btnMovement, #btnSound{
     background-color: whitesmoke
 }
 #btnNrPpl{
-    background-color:whitesmoke
+    background-color: whitesmoke
 }
 #backBtn{
     background-color: #d49fae;
@@ -299,7 +321,6 @@ color: darkslategrey
 }
 
 
-
 /* MOBIL ANPASSNING */
 /* INDEX.HTML */
 @media screen and (max-width: 1030px) {
@@ -343,3 +364,7 @@ color: darkslategrey
 
 
 /* AIR */
+/* ???????? */
+element.style {
+    margin-left: 0% !important;
+}
