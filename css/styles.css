@@ -1,7 +1,8 @@
 
 #bg {
     background-image: url("../Images/bgPic.jpg");
-    background-repeat: repeat-y; /* for vertical repeat */
+    background-repeat: no-repeat;
+    height: 100%;
     background-size: cover;
 }
 #wrapper{
@@ -10,11 +11,13 @@
   align-items: center;
   margin: 0 auto;
 }
+
+/* BIG BUBBLES */
 #box0{
   /*width: 900px;
   height: 900px;
   margin: 0 auto;*/
-  padding-top: calc(50% - 250px);;
+  padding-top: calc(50% - 250px);
 }
 .bubble{
   width: 200px;
@@ -24,7 +27,6 @@
   display: inline-block;
   transition: transform 0.5s;
 }
-
 #air{
   background: radial-gradient(circle at 100px 100px, #245861, #103339);
   box-shadow: 0 8px 20px -6px black;
@@ -60,17 +62,14 @@
 #create:hover{
   transform: scale(1.5);
 }
-
 #backBtn {
   background: radial-gradient(circle at 100px 100px, #ff8cac);
   box-shadow: 0 8px 20px -6px black;
   margin-top: 60%;
 }
-
 #backBtn:hover{
   transform: scale(1.5);
 }
-
 p{
   font-family: 'Roboto', sans-serif;
   color: white;
@@ -99,19 +98,27 @@ h1{
   background-image: url("../Images/bgPic1.png");
   background-repeat: repeat-y; /* for vertical repeat */
   background-size: cover;
-  //background-color: #245861;
 }
-.headline{
-  width:60px;
-  height:50px;
-  margin-left: 424px;
-  margin-top: 80px;
+.headline h1{
+  margin-top: 10%;
+  text-align: center;
+}
+.select1{
+  margin-left: 60px;
+  margin-bottom: 5%;
 }
 #pressure{
-  width: 125px;
-  height: 200px;
+  width: 500px;
+  height: 260px;
+  display: block;
   text-align: center;
-  margin-bottom: 10%;
+  margin: 5% auto 0% auto;
+}
+#pressure_chart{
+  width: 220px;
+  height: 220px;
+  display: block;
+  margin: 0 auto;
 }
 
 /* ACTIVITY */
@@ -119,43 +126,21 @@ h1{
   background-image: url("../Images/bgPic2.png");
   background-repeat: repeat-y; /* for vertical repeat */
   background-size: cover;
-  //background-color: #517984;
 }
-.headline2{
-  width:60px;
-  height:50px;
-  margin-left: 380px;
-  margin-top: 80px;
+#light, #movement{
+  width: 490px;
+  height: 300px;
+  text-align: center;
+  margin-bottom: 5%;
 }
 #box2{
   width: 1000px;
   height: 300px;
   margin: 0 auto;
 }
-#box3{
-  width: 1000px;
-  height: 300px;
-  margin: 0 auto;
-}
-#box4{
-  width: 1000px;
-  height: 300px;
-  margin: 0 auto;
-}
-#box5{
-  width: 1000px;
-  height: 300px;
-  margin: 0 auto;
-}
 #radett, #radtva{
-  width: 800px;
+  width: 1000px;
   margin: 0 auto;
-}
-#light, #movement{
-   width: 380px;
-  height: 200px;
-  text-align: center;
-  margin-bottom: 10%;
 }
 
 /* CAMERA*/
@@ -168,7 +153,6 @@ h1{
   background-image: url("../Images/bgPic3.png");
   background-repeat: repeat-y; /* for vertical repeat */
   background-size: cover;
-  //background-color: #dea7c6;
 }
 .headline3{
   width:220px;
@@ -181,34 +165,21 @@ h1{
   background-image: url("../Images/bgPic4.png");
   background-repeat: repeat-y; /* for vertical repeat */
   background-size: cover;
-  //background-color: #f883a4;
-}
-
-
-.charts{
-  /*width: 300px;
-  height: 200px;
-  margin: 0 auto;*/
-  display: inline-block;
 }
 #temp, #humidity, #sound, #distance, #number {
-  width: 380px;
-  height: 200px;
+  width: 490px;
+  height: 300px;
   text-align: center;
   margin-bottom: 10%;
 }
-
-#temp img, #humidity img, #light img, #movement img, #sound img, #number img{
-  width: 300px;
-  //height: 100px;
-  display: block;
-}
-#pressure img, #distance img{
-  width: 150px;
-  //height: 100px;
+.charts{
+  width: 490px;
+  height: 300px;
   margin: 0 auto;
-  align-items: center;
-  display: block;
+  display: inline-block;
+}
+#temperature_chart, #humidity_chart, #x_level_light_chart, #movement_chart, #sound_level_chart{
+ margin-top: -40px;
 }
 #btnTemperature, #btnPressure, #btnHumidity{
     background-color:whitesmoke
@@ -223,35 +194,30 @@ h1{
     background-color: #d49fae;
     margin-top: 50px;
 }
-
-
+#box2{
+   margin-top: -20%;
+}
 
 /* LINKS */
 a:link {
     color: white;
     text-decoration: none;
 }
-
 /* visited link */
 a:visited {
     color: white;
     text-decoration: none;
 }
-
 /* mouse over link */
 a:hover {
     color: white;
     text-decoration: none;
 }
-
 /* selected link */
 a:active {
     color: white;
     text-decoration: none;
 }
-
-
-
 
 /* SMALL NAVBAR */
 .vertical-menu {
@@ -264,13 +230,6 @@ a:active {
   margin-left: 5px;
 
 }
-/* .vertical-menu a {
-    background-color: #eee;
-    color: black;
-    display: block;
-    padding: 12px;
-    text-decoration: none;
-} */
 .vertical-menu a:hover {
     color: white;
     text-decoration: none;
@@ -278,7 +237,6 @@ a:active {
 .vertical-menu a.active {
     color: black;
     text-decoration: none;
-
 }
 .bubble2{
   width: 50px;
@@ -313,121 +271,6 @@ padding-top: 12px;
 font-size: 8px;
 color: darkslategrey
 }
-/* LINKS */
-a:link {
-    color: white;
-    text-decoration: none;
-}
-
-/* visited link */
-a:visited {
-    color: white;
-    text-decoration: none;
-}
-
-/* mouse over link */
-a:hover {
-    color: white;
-    text-decoration: none;
-}
-
-/* selected link */
-a:active {
-    color: white;
-    text-decoration: none;
-}
-
-
-
-/* AIR */
-#airBody{
-  background-color: #245861;
-}
-.headline h1{
-  margin-top: 10%;
-  text-align: center;
-}
-.select1{
-  margin-left: 60px;
-  margin-bottom: 5%;
-}
-#pressure{
-  width: 500px;
-  height: 260px;
-  display: block;
-  text-align: center;
-  margin: 5% auto 0% auto;
-}
-#pressure_chart{
-  width: 220px;
-  height: 220px;
-  display: block;
-  margin: 0 auto;
-}
-/*#radettair {
-  width: 1000px;
-  margin: 0 auto;
-}*/
-
-/* ACTIVITY */
-#activityBody{
-  background-color: #517984;
-}
-#box2{
-  width: 1000px;
-  height: 300px;
-  margin: 0 auto;
-}
-#radett, #radtva{
-  width: 1000px;
-  margin: 0 auto;
-}
-
-
-/* CAMERA*/
-#cameraBody{
-  background-color: #a3708d;
-}
-
-/* DIVS */
-#divsBody{
-  background-color: #dea7c6;
-}
-.headline3{
-  width:220px;
-  height:50px;
-  margin-left: 390px;
-}
-
-/* CREATE*/
-#customBody{
-  background-color: #f883a4;
-}
-.charts{
-  width: 490px;
-  height: 300px;
-  margin: 0 auto;
-  display: inline-block;
-}
-#temperature_chart, #humidity_chart, #x_level_light_chart, #movement_chart, #sound_level_chart{
- margin-top: -40px;
-}
-#btnTemperature, #btnPressure, #btnHumidity{
-    background-color:whitesmoke
-}
-#btnLight, #btnMovement, #btnSound{
-    background-color: whitesmoke
-}
-#btnNrPpl{
-    background-color:whitesmoke
-}
-#backBtn{
-    background-color: #d49fae;
-    margin-top: 50px;
-}
-#box2{
-   margin-top: -20%;
-}
 
 /* CREATE YOUR OWN */
 .icon, img{
@@ -454,3 +297,49 @@ a:active {
   -moz-user-select: none;
   -ms-user-select: none;
 }
+
+
+
+/* MOBIL ANPASSNING */
+/* INDEX.HTML */
+@media screen and (max-width: 1030px) {
+  .bubble {
+    width: 100px;
+    height: 100px;
+  }
+.zoomViewport{
+  width: 529px;
+  margin: 0 auto;
+  //margin-left: 15%;
+  //justify-content: center;
+}
+.zoomContainer{
+  /*width: 529px;
+  margin: auto;*/
+}
+  .bubble p{
+    font-size: 15px;
+    padding-top: 26px;
+  }
+
+}
+@media screen and (max-width: 530px) {
+  .bubble {
+    display: block;
+  }
+  #box0 {
+    padding-top: 30px;
+  }
+  .bubble p{
+    font-size: 15px;
+    padding-top: 42px;
+  }
+  #bg {
+      background-image: url("../Images/bgPic.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+}
+
+
+/* AIR */

@@ -72,74 +72,79 @@
 
         <!-- CHARTS DISPLAY -->
         <div id="wrapper">
-
-          <form class="" action="index.html" method="post">
-            <div id="box">
-            <div class="select1">
-              <p>Data from:</p>
-              <select class="select" id="date_from" data-size="5">
-
-              </select>
-            </div>
-            <div class="select2">
-              <p>Data to:</p>
-              <select class="select" name="" id="date_to">
-
-              </select>
-            </div>
-            <div id="button">
-            <input class="submit "type="submit" value="submit">
-            </div>
-            </div>
-          </form>
-          
-            <!-- DIV CHART -->
-            <!-- NUMBERS OF PEOPLE/ HISTORY -->
-            <div class="charts" id="chartNrPpl" style="display: none">
-                <p id="customP">Number of people</p>
-                <div id="number_of_people_chart" style="width: 360px; height: 200px;"></div>
+          <div id="box2">
+            <div class="headline">
+                <h1>CREATE YOUR OWN</h1>
             </div>
 
-            <!-- ACTIVITY CHART -->
+            <form class="" action="index.html" method="post">
+              <div id="box">
+              <div class="select1">
+                <p>Data from:</p>
+                <select class="select" id="date_from" data-size="5">
 
-            <!-- LIGHT -->
-            <div class="charts" id="chartLight" style="display: none">
-                <p id="customP">Light level</p>
-                <div id="x_level_light_chart" style="width: 360px; height: 200px"></div>
+                </select>
+              </div>
+              <div class="select2">
+                <p>Data to:</p>
+                <select class="select" name="" id="date_to">
+
+                </select>
+              </div>
+              <div id="button">
+              <input class="submit "type="submit" value="submit">
+              </div>
+              </div>
+            </form>
+
+              <!-- DIV CHART -->
+              <!-- NUMBERS OF PEOPLE/ HISTORY -->
+              <div class="charts" id="chartNrPpl" style="display: none">
+                  <p id="customP">Number of people</p>
+                  <div id="number_of_people_chart" style="width: 360px; height: 200px;"></div>
+              </div>
+
+              <!-- ACTIVITY CHART -->
+
+              <!-- LIGHT -->
+              <div class="charts" id="chartLight" style="display: none">
+                  <p id="customP">Light level</p>
+                  <div id="x_level_light_chart" style="width: 360px; height: 200px"></div>
+              </div>
+
+              <!-- MOVEMENT -->
+              <div class="charts" id="chartMove" style="display: none">
+                  <p id="customP">Movement</p>
+                  <div id="movement_chart" style="width: 360px; height: 200px"></div>
+              </div>
+
+              <!-- SOUND -->
+              <div class="charts" id="chartSound" style="display: none">
+                  <p id="customP">Sound level</p>
+                  <div id="sound_level_chart" style="width: 360px; height: 200px"></div>
+              </div>
+
+              <!-- AIR CHART -->
+
+              <!-- TEMPERATURE -->
+              <div class="charts" id="chartTemperature" style="display: none">
+                  <p id="customP">Temperature</p>
+                  <div id="temperature_chart" style="width: 360px; height: 200px"></div>
+              </div>
+
+              <!-- PRESSURE -->
+              <div class="charts" id="chartPress" style="display: none">
+                  <p id="customP">Pressure</p>
+                  <div id="pressure_chart" style="width: 400px; height: 120px;"></div>
+              </div>
+
+              <!-- HUMIDITY -->
+              <div class="charts" id="chartHumidity" style="display: none">
+                  <p id="customP">Humidity</p>
+                  <div id="humidity_chart" style="width: 360px; height: 200px"></div>
+              </div>
             </div>
-
-            <!-- MOVEMENT -->
-            <div class="charts" id="chartMove" style="display: none">
-                <p id="customP">Movement</p>
-                <div id="movement_chart" style="width: 360px; height: 200px"></div>
-            </div>
-
-            <!-- SOUND -->
-            <div class="charts" id="chartSound" style="display: none">
-                <p id="customP">Sound level</p>
-                <div id="sound_level_chart" style="width: 360px; height: 200px"></div>
-            </div>
-
-            <!-- AIR CHART -->
-
-            <!-- TEMPERATURE -->
-            <div class="charts" id="chartTemperature" style="display: none">
-                <p id="customP">Temperature</p>
-                <div id="temperature_chart" style="width: 360px; height: 200px"></div>
-            </div>
-
-            <!-- PRESSURE -->
-            <div class="charts" id="chartPress" style="display: none">
-                <p id="customP">Pressure</p>
-                <div id="pressure_chart" style="width: 400px; height: 120px;"></div>
-            </div>
-
-            <!-- HUMIDITY -->
-            <div class="charts" id="chartHumidity" style="display: none">
-                <p id="customP">Humidity</p>
-                <div id="humidity_chart" style="width: 360px; height: 200px"></div>
-            </div>
-        </div>
+          </div>
 
         <!-- Internal Scripts-->
         <script type="text/javascript" src="js/dynamodb.js"></script>
