@@ -250,7 +250,6 @@ a:active {
   display: block;
   margin-top: 7%;
   margin-left: 5px;
-
 }
 .vertical-menu a:hover {
     color: white;
@@ -329,14 +328,16 @@ color: darkslategrey
     height: 100px;
   }
 .zoomViewport{
-  width: 529px;
   margin: 0 auto;
-  //margin-left: 15%;
-  //justify-content: center;
+  margin-top: 100px;
+  margin-left: calc(50vw - 270px);
 }
 .zoomContainer{
-  /*width: 529px;
-  margin: auto;*/
+  //width: 529px;
+  //margin: auto;
+}
+#box0 {
+  margin: auto;
 }
   .bubble p{
     font-size: 15px;
@@ -347,6 +348,11 @@ color: darkslategrey
 @media screen and (max-width: 530px) {
   .bubble {
     display: block;
+  }
+  .zoomViewport{
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-left: calc(50vw - 70px);
   }
   #box0 {
     padding-top: 30px;
@@ -362,9 +368,58 @@ color: darkslategrey
   }
 }
 
+@media screen and (max-width: 450px) {
+
+}
 
 /* AIR */
-/* ???????? */
-element.style {
-    margin-left: 0% !important;
+@media screen and (max-width: 970px) {
+  #radett, #radtva, .charts{
+    width: 500px;
+  }
+  .select1{
+    /*margin-left: 60px;*/
+    margin-bottom: 5%;
+    margin-left: 335px;
+
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #radett, #radtva{
+    width: 490px;
+  }
+  .select1{
+    /*margin-left: 60px;*/
+    margin-bottom: 5%;
+    /*margin-left: 335px;*/
+    margin-left: calc(35vw - 70px);
+  }
+  .charts, #temperature_chart, #humidity_chart, #x_level_light_chart, #movement_chart, #sound_level_chart{
+    margin-left: calc(35vw - 400px);
+  }
+  .headline h1{
+    margin-top: 15%;
+    margin-left: calc(35vw - 550px);
+  }
+  .charts p{
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  /*.vertical-menu {
+    width: 50px;
+    height: 50px;
+    display: block;
+    float: left;
+  }*/
+  /*.bubble2{
+    width: 50px;
+    height: 50px;
+    display: block;
+    float: left;
+  }*/
+
+
 }
