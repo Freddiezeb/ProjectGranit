@@ -202,13 +202,13 @@ h1{
   background-size: cover;
   background-attachment: fixed;
 }
-.headline2{
+/*.headline2{
   width:60px;
   height:50px;
   //margin-left: 380px;
   margin-top: 80px;
 
-}
+}*/
 #light, #movement{
   width: 490px;
   height: 300px;
