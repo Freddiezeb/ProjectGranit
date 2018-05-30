@@ -34,36 +34,95 @@
   background: radial-gradient(circle at 100px 100px, #245861, #103339);
   box-shadow: 0 8px 20px -6px black;
 }
+/*När bubbla är klickad*/
+#air_clicked{
+  background: radial-gradient(circle at 100px 100px, #245861, #103339);
+  box-shadow: 0 8px 20px -6px black;
+  transform: scale(1.5);
+}
 #air:hover{
   transform: scale(1.5);
+}
+/*utan hover*/
+#air_noHover{
+  background: radial-gradient(circle at 100px 100px, #245861, #103339);
+  box-shadow: 0 8px 20px -6px black;
 }
 #activity{
   background: radial-gradient(circle at 100px 100px, #517984, #264750);
   box-shadow: 0 8px 20px -6px black;
 }
+/*När bubbla är klickad*/
+#activity_clicked{
+  background: radial-gradient(circle at 100px 100px, #517984, #264750);
+  box-shadow: 0 8px 20px -6px black;
+  transform: scale(1.5);
+}
 #activity:hover{
   transform: scale(1.5);
 }
+/*utan hover*/
+#activity_noHover{
+  background: radial-gradient(circle at 100px 100px, #517984, #264750);
+  box-shadow: 0 8px 20px -6px black;
+}
+
 #camera{
   background: radial-gradient(circle at 100px 100px, #a3708d, #5d3f50);
   box-shadow: 0 8px 20px -6px black;
 }
+/*När bubbla är klickad*/
+#camera_clicked{
+  background: radial-gradient(circle at 100px 100px, #a3708d, #5d3f50);
+  box-shadow: 0 8px 20px -6px black;
+  transform: scale(1.5);
+}
 #camera:hover{
   transform: scale(1.5);
+}
+/*utan hover*/
+#camera_noHover{
+  background: radial-gradient(circle at 100px 100px, #a3708d, #5d3f50);
+  box-shadow: 0 8px 20px -6px black;
 }
 #divs{
   background: radial-gradient(circle at 100px 100px, #dea7c6, #a8648b);
   box-shadow: 0 8px 20px -6px black;
 }
+/*När bubbla är klickad*/
+#divs_clicked{
+  background: radial-gradient(circle at 100px 100px, #dea7c6, #a8648b);
+  box-shadow: 0 8px 20px -6px black;
+  transform: scale(1.5);
+
+}
 #divs:hover{
   transform: scale(1.5);
 }
+/*utan hover*/
+#divs_noHover{
+  background: radial-gradient(circle at 100px 100px, #dea7c6, #a8648b);
+  box-shadow: 0 8px 20px -6px black;
+}
+
 #create{
   background: radial-gradient(circle at 100px 100px, #f883a4, #c42f59);
   box-shadow: 0 8px 20px -6px black;
 }
+/*När bubbla är klickad*/
+#create_clicked{
+  background: radial-gradient(circle at 100px 100px, #f883a4, #c42f59);
+  box-shadow: 0 8px 20px -6px black;
+  transform: scale(1.5);
+}
+
 #create:hover{
   transform: scale(1.5);
+}
+/*utan hover*/
+#create_noHover{
+  background: radial-gradient(circle at 100px 100px, #f883a4, #c42f59);
+  box-shadow: 0 8px 20px -6px black;
 }
 #backBtn {
   background: radial-gradient(circle at 100px 100px, #ff8cac);

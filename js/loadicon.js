@@ -1,5 +1,5 @@
 "use strict";
-var headline=document.getElementsByClassName('headline1');
+var headline=document.getElementById('headline');
 var loadBubble=document.getElementById('load');
 var ldLabel=document.getElementsByClassName('ldBar-label');
 var wrapp=document.getElementById('wrapper');
@@ -26,7 +26,7 @@ function displayCharts() {
   setTimeout(function(){
     wrapp.classList.replace("wrapper_display_none","wrapper_display");
     loadBubble.remove();
-    headline.classList.replace("headline1","headline2");
+    headline.remove();
  }, 20500);
 
 }
