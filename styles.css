@@ -1,0 +1,511 @@
+
+#bg {
+    background-image: url("../Images/bgPic.jpg");
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: cover;
+}
+#wrapper{
+  width: 1024px;
+  height: 100vh;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/* BIG BUBBLES */
+#box0{
+  /*width: 900px;
+  height: 900px;
+  margin: 0 auto;*/
+  padding-top: calc(50% - 250px);
+}
+.bubble{
+  width: 200px;
+  height: 200px;
+  color: white;
+  border-radius: 50%;
+  display: inline-block;
+  transition: transform 0.5s;
+}
+#air{
+  background: radial-gradient(circle at 100px 100px, #245861, #103339);
+  box-shadow: 0 8px 20px -6px black;
+}
+#air:hover{
+  transform: scale(1.5);
+}
+/*Changes to this id when clicked so bubble wont get hover effect*/
+#air_noHover{
+  background: radial-gradient(circle at 100px 100px, #245861, #103339);
+  box-shadow: 0 8px 20px -6px black;
+}
+/*Changes to this id when clicked*/
+#air_clicked{
+  background: radial-gradient(circle at 100px 100px, #245861, #103339);
+  box-shadow: 0 8px 20px -6px black;
+  transform: scale(1.5);
+}
+#activity{
+  background: radial-gradient(circle at 100px 100px, #517984, #264750);
+  box-shadow: 0 8px 20px -6px black;
+}
+#activity:hover{
+  transform: scale(1.5);
+}
+/*Changes to this id when clicked so bubble wont get hover effect*/
+#activity_noHover{
+  background: radial-gradient(circle at 100px 100px, #517984, #264750);
+  box-shadow: 0 8px 20px -6px black;
+}
+/*Changes to this id when clicked*/
+#activity_clicked{
+  background: radial-gradient(circle at 100px 100px, #517984, #264750);
+  box-shadow: 0 8px 20px -6px black;
+  transform: scale(1.5);
+}
+#camera{
+  background: radial-gradient(circle at 100px 100px, #a3708d, #5d3f50);
+  box-shadow: 0 8px 20px -6px black;
+}
+#camera:hover{
+  transform: scale(1.5);
+}
+/*Changes to this id when clicked so bubble wont get hover effect*/
+#camera_noHover{
+  background: radial-gradient(circle at 100px 100px, #a3708d, #5d3f50);
+  box-shadow: 0 8px 20px -6px black;
+}
+/*Changes to this id when clicked*/
+#camera_clicked{
+  background: radial-gradient(circle at 100px 100px, #a3708d, #5d3f50);
+  box-shadow: 0 8px 20px -6px black;
+  transform: scale(1.5);
+}
+#divs{
+  background: radial-gradient(circle at 100px 100px, #dea7c6, #a8648b);
+  box-shadow: 0 8px 20px -6px black;
+}
+#divs:hover{
+  transform: scale(1.5);
+}
+/*Changes to this id when clicked so bubble wont get hover effect*/
+#divs_noHover{
+  background: radial-gradient(circle at 100px 100px, #dea7c6, #a8648b);
+  box-shadow: 0 8px 20px -6px black;
+}
+/*Changes to this id when clicked*/
+#divs_clicked{
+  background: radial-gradient(circle at 100px 100px, #dea7c6, #a8648b);
+  box-shadow: 0 8px 20px -6px black;
+  transform: scale(1.5);
+}
+#create{
+  background: radial-gradient(circle at 100px 100px, #f883a4, #c42f59);
+  box-shadow: 0 8px 20px -6px black;
+}
+#create:hover{
+  transform: scale(1.5);
+}
+/*Changes to this id when clicked so bubble wont get hover effect*/
+#create_noHover{
+  background: radial-gradient(circle at 100px 100px, #f883a4, #c42f59);
+  box-shadow: 0 8px 20px -6px black;
+}
+/*Changes to this id when clicked*/
+#create_clicked{
+  background: radial-gradient(circle at 100px 100px, #f883a4, #c42f59);
+  box-shadow: 0 8px 20px -6px black;
+  transform: scale(1.5);
+
+}
+#backBtn {
+  background: radial-gradient(circle at 100px 100px, #ff8cac);
+  box-shadow: 0 8px 20px -6px black;
+  margin-top: 60%;
+}
+#backBtn:hover{
+  transform: scale(1.5);
+}
+p{
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  line-height: 1.3;
+  text-align: center;
+  //text-shadow: 1px 1px 2px 	#808080;
+}
+#customP{
+    text-align: left;
+}
+.bubble p{
+text-transform: uppercase;
+text-align: center;
+padding-top: 70px;
+font-size: 20px;
+}
+h1{
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  //line-height: 1.3;
+  font-weight: normal;
+}
+
+/* AIR */
+#airBody{
+  background-image: url("../Images/bgPic1.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.headline h1{
+  margin-top: 10%;
+  text-align: center;
+}
+.select1{
+  margin-left: 60px;
+  margin-bottom: 5%;
+  font-family: 'Futura', sans-serif;
+}
+.select2 {
+  font-family: 'Futura', sans-serif;
+}
+#pressure{
+  width: 500px;
+  height: 260px;
+  display: block;
+  text-align: center;
+  margin: 5% auto 0% auto;
+}
+#pressure_chart{
+  width: 220px;
+  height: 220px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ACTIVITY */
+#activityBody{
+  background-image: url("../Images/bgPic2.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.headline2{
+  width:60px;
+  height:50px;
+  //margin-left: 380px;
+  margin-top: 80px;
+
+}
+#light, #movement{
+  width: 490px;
+  height: 300px;
+  text-align: center;
+  margin-bottom: 5%;
+}
+#box2{
+  width: 1000px;
+  height: 300px;
+  margin: 0 auto;
+}
+#radett, #radtva{
+  width: 1000px;
+  margin: 0 auto;
+}
+
+/* CAMERA*/
+#cameraBody{
+  background-color: #a3708d;
+  background-attachment: fixed;
+}
+
+/* DIVS */
+#divsBody{
+  background-image: url("../Images/bgPic3.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+/*.headline3{
+  width:220px;
+  height:50px;
+  margin-left: 390px;
+}*/
+
+/* CREATE*/
+#customBody{
+  background-image: url("../Images/bgPic4.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+#temp, #humidity, #sound, #distance, #number {
+  width: 490px;
+  height: 300px;
+  text-align: center;
+  margin-bottom: 10%;
+}
+.charts{
+  width: 490px;
+  height: 300px;
+  margin-left: 0% !important;
+  margin-top: 0% !important;
+  margin: 0 auto;
+  display: inline-block;
+}
+#temperature_chart, #humidity_chart, #x_level_light_chart, #movement_chart, #sound_level_chart{
+ margin-top: -40px;
+}
+#btnTemperature, #btnPressure, #btnHumidity{
+    background-color: whitesmoke
+}
+#btnLight, #btnMovement, #btnSound{
+    background-color: whitesmoke
+}
+#btnNrPpl{
+    background-color: whitesmoke
+}
+#backBtn{
+    background-color: #d49fae;
+    margin-top: 50px;
+}
+#box2{
+   margin-top: -20%;
+}
+
+/* LINKS */
+a:link {
+    color: white;
+    text-decoration: none;
+}
+/* visited link */
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+/* mouse over link */
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+/* selected link */
+a:active {
+    color: white;
+    text-decoration: none;
+}
+
+/* SMALL NAVBAR */
+.vertical-menu {
+  width: 50px;
+  height: 50px;
+  color: white;
+  border-radius: 50%;
+  display: block;
+  margin-top: 7%;
+  margin-left: 5px;
+}
+.vertical-menu a:hover {
+    color: white;
+    text-decoration: none;
+}
+.vertical-menu a.active {
+    color: black;
+    text-decoration: none;
+}
+.bubble2{
+  width: 50px;
+  height: 50px;
+  color: white;
+  border-radius: 50%;
+  display: block;
+  transition: transform 0.5s;
+}
+.bubble2 p{
+text-transform: uppercase;
+text-align: center;
+padding-top: 20px;
+font-size: 7px;
+}
+.bubbleBorder{
+  width: 47px;
+  height: 47px;
+  color: white;
+  border-radius: 50%;
+  display: block;
+  transition: transform 0.5s;
+    border: 2px solid transparent;
+    -moz-border-radius:50%;
+    -webkit-border-radius: 50%;
+    margin-top: 7px;
+}
+.bubbleBorder p{
+text-transform: uppercase;
+text-align: center;
+padding-top: 12px;
+font-size: 8px;
+color: darkslategrey
+}
+
+/* CREATE YOUR OWN */
+.icon, img{
+  height: 35px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.x.axis path {
+  display: none;
+}
+.area {
+  fill: steelblue;
+}
+.no-copy{
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+
+/* MOBIL ANPASSNING */
+/* INDEX.HTML */
+@media screen and (max-width: 1030px) {
+  .bubble {
+    width: 100px;
+    height: 100px;
+  }
+.zoomViewport{
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-left: calc(50vw - 270px);
+}
+.zoomContainer{
+  //width: 529px;
+  //margin: auto;
+}
+#box0 {
+  margin: auto;
+}
+  .bubble p{
+    font-size: 15px;
+    padding-top: 26px;
+  }
+
+}
+@media screen and (max-width: 530px) {
+  .bubble {
+    display: block;
+  }
+  .zoomViewport{
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-left: calc(50vw - 70px);
+  }
+  #box0 {
+    padding-top: 30px;
+  }
+  .bubble p{
+    font-size: 15px;
+    padding-top: 42px;
+  }
+  #bg {
+      background-image: url("../Images/bgPic.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+}
+
+@media screen and (max-width: 450px) {
+
+}
+
+/* AIR */
+@media screen and (max-width: 970px) {
+  #radett, #radtva, .charts{
+    width: 500px;
+  }
+  .select1{
+    /*margin-left: 60px;*/
+    margin-bottom: 5%;
+    margin-left: 335px;
+    font-family: 'Futura', sans-serif;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #radett, #radtva{
+    width: 490px;
+  }
+  .select1{
+    /*margin-left: 60px;*/
+    margin-bottom: 5%;
+    /*margin-left: 335px;*/
+    margin-left: calc(35vw - 70px);
+    font-family: 'Futura', sans-serif;
+  }
+  .charts, #temperature_chart, #humidity_chart, #x_level_light_chart, #movement_chart, #sound_level_chart{
+    margin-left: calc(35vw - 400px);
+  }
+  .headline h1{
+    margin-top: 15%;
+    margin-left: calc(35vw - 550px);
+  }
+  .charts p{
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  /*.vertical-menu {
+    width: 50px;
+    height: 50px;
+    display: block;
+    float: left;
+  }*/
+  /*.bubble2{
+    width: 50px;
+    height: 50px;
+    display: block;
+    float: left;
+  }*/
+}
+
+input.submit {
+  background-color: #245861;
+  box-shadow: none;
+  padding: 10px;
+  font-family: 'Futura', sans-serif;
+  color: white;
+}
+
+input.submit:hover {
+  color: #245861;
+  background-color: white;
+}
+
+select#date_to.select {
+  box-shadow: none;
+  font-family: 'Futura', sans-serif;
+}
+
+select#date_from.select {
+  box-shadow: none;
+  font-family: 'Futura', sans-serif;
+}
+
+div#button {
+  margin-top: 5%;
+}
