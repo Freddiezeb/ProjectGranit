@@ -16,6 +16,18 @@ var soundTimeArray = [];
 var movementArray = [];
 var movementTimeArray = [];
 
+var tempContainer = [];
+
+
+
+var lightLevelContainer = [];
+lightLevelContainer.push(["Time", "Sensmitter1", "Sensmitter2", "Sensmitter3"]);
+var hudituihdsg = Date.now();
+//lightLevelContainer.push([new Date((hudituihdsg - 3600000) * 1000), 10, 37, 34]);
+
+
+console.log(lightLevelContainer);
+
 fill("SensorsIOTAPLab");
 
 //var numberOfPeopleArray = [];
@@ -90,7 +102,7 @@ function arduino_due_1(result)
     if(page == "air.html")
     {
         updateTemperatureChart(result, null, null, null, null);
-        
+
         //FIXME: Pressure needs the right results from sensmitters
         updatePressureChart(null, null, null, null);
         updateHumidityChart(result, null, null, null, null);
@@ -99,11 +111,11 @@ function arduino_due_1(result)
     //Everything displayed in activity.html
     if(page == "activity.html")
     {
-          updateLightLevelChart(result, null, null, null, null);  
-          updateSoundLevelChart(result, null, null, null, null);  
-          updateMovementChart(result, null, null, null, null);  
+        //        updateLightLevelChart(result, null, null, null, null);  
+        updateSoundLevelChart(result, null, null, null, null);  
+        updateMovementChart(result, null, null, null, null);  
     }
-    
+
     //Everything displayed in custom.html
     if(page == "custom.html")
     {
@@ -121,6 +133,7 @@ function arduino_due_1(result)
 function hue_1(result)
 {
     console.log("hue_1")
+    console.log(result);
 }
 
 //This method gives us all the data from blinds_1
@@ -128,6 +141,7 @@ function hue_1(result)
 function blinds_1(result)
 {
     console.log("blinds_1")
+    console.log(result);
 }
 
 //This method gives us all the data from person_count
@@ -135,6 +149,7 @@ function blinds_1(result)
 function person_count(result)
 {
     console.log("person_count")
+    console.log(result);
 }
 
 //This method gives us all the data from lab_state
@@ -142,6 +157,7 @@ function person_count(result)
 function lab_state(result)
 {
     console.log("lab_state")
+    console.log(result);
 }
 
 //This method gives us all the data from phone_1
@@ -149,6 +165,7 @@ function lab_state(result)
 function phone_1(result)
 {
     console.log("phone_1")
+    console.log(result);
 }
 
 //This method gives us all the data from axis_old_camera
@@ -156,27 +173,71 @@ function phone_1(result)
 function axis_old_camera(result)
 {
     console.log("axis_old_camera")
+    console.log(result);
 }
 
+var first = true;
 //This method gives us all the data from sensmitter_1
 //So this is where we do everything related to this data
 function sensmitter_1(result)
 {
+    if(first)
+    {
+        lightLevelContainer.push([new Date((result.timestamp - 1000) * 1000), 10, 37, 34]);
+        first = false;
+    }
     console.log("sensmitter_1")
+    console.log(result);
+    console.log(result.data.light_level);
+
+    var date = new Date(result.timestamp * 1000);
+    var tempsensmitter2 = lightLevelContainer[lightLevelContainer.length -1][2];
+    var tempSensmitter3 = lightLevelContainer[lightLevelContainer.length -1][3];
+
+    //    lightLevelContainer.push(date, result.data.light_level, temp)
+    lightLevelContainer.push([date, result.data.light_level, tempsensmitter2, tempSensmitter3]);
+    lineChart(lightLevelContainer, "x_level_light_chart", null);
 }
 
 //This method gives us all the data from sensmitter_2
 //So this is where we do everything related to this data
 function sensmitter_2(result)
 {
+    if(first)
+    {
+        lightLevelContainer.push([new Date((result.timestamp - 1000) * 1000), 10, 37, 34]);
+        first = false;
+    }
     console.log("sensmitter_2")
+    console.log(result);
+    //    lightLevelContainer.push(new Date(result.timestamp * 1000), lightLevelContainer[lightLevelContainer.length -1][1], result.data.light_level)
+    //    lineChart(lightLevelContainer, "x_level_light_chart", null);
+
+    var date = new Date(result.timestamp * 1000);
+    var tempSensmitter1 = lightLevelContainer[lightLevelContainer.length -1][1];
+    var tempSensmitter3 = lightLevelContainer[lightLevelContainer.length -1][3];
+    //    lightLevelContainer.push(date, result.data.light_level, temp)
+    lightLevelContainer.push([date, tempSensmitter1, result.data.light_level, tempSensmitter3]);
+    lineChart(lightLevelContainer, "x_level_light_chart", null);
 }
 
 //This method gives us all the data from sensmitter_3
 //So this is where we do everything related to this data
 function sensmitter_3(result)
 {
+    if(first){
+        lightLevelContainer.push([new Date((result.timestamp - 1000) * 1000), 10, 37, 34]);
+        first = false;
+    }
     console.log("sensmitter_3")
+    console.log(result);
+
+    var date = new Date(result.timestamp * 1000);
+    var tempSensmitter1 = lightLevelContainer[lightLevelContainer.length -1][1];
+    var tempSensmitter2 = lightLevelContainer[lightLevelContainer.length -1][2];
+    //    lightLevelContainer.push(date, result.data.light_level, temp)
+    lightLevelContainer.push([date, tempSensmitter1, tempSensmitter2, result.data.light_level]);
+    lineChart(lightLevelContainer, "x_level_light_chart", null);
 }
 
 //This method gives us all the data from cameraACCC8E7E6E9F
@@ -184,6 +245,7 @@ function sensmitter_3(result)
 function cameraACCC8E7E6E9F(result)
 {
     console.log("cameraACCC8E7E6E9F")
+    console.log(result);
 }
 
 //This method gives us all the data from eye_contact_1
@@ -191,6 +253,7 @@ function cameraACCC8E7E6E9F(result)
 function eye_contact_1(result)
 {
     console.log("eye_contact_1")
+    console.log(result);
 }
 
 //This method gives us all the data from user_feedback
@@ -198,6 +261,7 @@ function eye_contact_1(result)
 function user_feedback(result)
 {
     console.log("user_feedback")
+    console.log(result);
 }
 
 //This function takes in an empty array, the data that we want to store 

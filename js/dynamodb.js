@@ -27,31 +27,32 @@ function fill(table)
         }
         else{
             var arr = [];
-            for(let index = data.Items.length - 8; index < data.Items.length; index++){
-                if(page == "air.html")
-                {
-                    startTemperatureChart(data.Items[index].payload, null);
-                    startHumidityChart(data.Items[index].payload, null);
-                }
-
-                if(page == "activity.html")
-                {
-                    startLightLevelChart(data.Items[index].payload, null);
-                    startSoundLevelChart(data.Items[index].payload, null);
-                    startMovementChart(data.Items[index].payload, null);
-                }
-
-                if(page == "custom.html")
-                {
-                    startTemperatureChart(data.Items[index].payload, null);
-                    startHumidityChart(data.Items[index].payload, null);
-                    startLightLevelChart(data.Items[index].payload, null);
-                    startSoundLevelChart(data.Items[index].payload, null);
-                    startMovementChart(data.Items[index].payload, null);
-                }
-
+            for(let index = 0; index < data.Items.length; index++){
+//                if(page == "air.html")
+//                {
+////                    startTemperatureChart(data.Items[index].payload, null);
+////                    startHumidityChart(data.Items[index].payload, null);
+//                        
+//                }
+//
+//                if(page == "activity.html")
+//                {
+//                    startLightLevelChart(data.Items[index].payload, null);
+//                    startSoundLevelChart(data.Items[index].payload, null);
+//                    startMovementChart(data.Items[index].payload, null);
+//                }
+//
+//                if(page == "custom.html")
+//                {
+//                    startTemperatureChart(data.Items[index].payload, null);
+//                    startHumidityChart(data.Items[index].payload, null);
+//                    startLightLevelChart(data.Items[index].payload, null);
+//                    startSoundLevelChart(data.Items[index].payload, null);
+//                    startMovementChart(data.Items[index].payload, null);
+//                }
+//      console.log(data.Items[index].uid);
             }
-            console.log(data);
+      
         }
 
     }

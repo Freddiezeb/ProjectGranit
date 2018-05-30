@@ -90,16 +90,16 @@ function subscribe() {
     client.subscribe("iotap-lab/computer_1/camera/axis_old_camera");
 
     //Sensmitter (humidity, light level, pressure, temperature)
-    client.subscribe("iotap_lab/phone/sensmitter/sensmitter_1");
-    client.subscribe("iotap_lab/phone/sensmitter/sensmitter_2");
-    client.subscribe("iotap_lab/phone/sensmitter/sensmitter_3");
+    client.subscribe("iotap_lab/phone_1/sensmitter/sensmitter_1");
+    client.subscribe("iotap_lab/phone_1/sensmitter/sensmitter_2");
+    client.subscribe("iotap_lab/phone_1/sensmitter/sensmitter_3");
 
     //Peter
     //Phone (movement, sound level)
     client.subscribe("iotap_lab/phone_1/phone/phone_1");
 
     //Roof Mounted Camera (In/Out)
-    client.subscribe("iotap_lab/raspberry_pi_1/camera/cameraACCC8E7E6E9F");
+    client.subscribe("iotap_lab/raspberry_pi_1/camera/cameraaccc8e7e6e9f");
 
     //Eye Contact Camera (detected faces, eye contacts, looking towards camera)
     client.subscribe("iotap_lab/computer_1/camera/eye_contact_1");
@@ -116,7 +116,7 @@ function subscribe() {
 
     //Divs
     //person count(count,  pred accuracy) 
-    client.subscribe("iotap_lab/divs/person_count");
+    client.subscribe("iotap-lab/divs/person_count");
     //lab state(silent, convo/meeting, gathering)
     client.subscribe("iotap_lab/divs/lab_state");
 

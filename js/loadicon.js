@@ -16,7 +16,7 @@ var bar = new ldBar(loadBubble, {
  //Fyll bubbla färg, färg för mindre bubblor, antal bubblor i mönster, hastighet
  "fill":"data:ldbar/res,bubble(#a0d7e3,#fff,40,5)",
  //Fyllnads tid 5 sec
- "duration":"20"
+ "duration":"1"
 });
 //fyll till hundra
 bar.set(100)
@@ -27,6 +27,6 @@ function displayCharts() {
     wrapp.classList.replace("wrapper_display_none","wrapper_display");
     loadBubble.remove();
     headline.remove();
- }, 20500);
+ }, 0);
 
 }
