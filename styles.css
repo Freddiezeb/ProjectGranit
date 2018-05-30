@@ -446,3 +446,34 @@ color: darkslategrey
 }*/
 
 }
+
+input.submit {
+	  background-color: #245861;
+	  box-shadow: none;
+	  padding: 10px;
+	  font-family: 'Futura', sans-serif;
+	  color: white;
+	}
+
+
+	input.submit:hover {
+	  color: #245861;
+	  background-color: white;
+	}
+
+
+	select#date_to.select {
+	  box-shadow: none;
+	  font-family: 'Futura', sans-serif;
+	}
+
+
+	select#date_from.select {
+	  box-shadow: none;
+	  font-family: 'Futura', sans-serif;
+	}
+
+
+	div#button {
+	  margin-top: 4.5%;
+	}
