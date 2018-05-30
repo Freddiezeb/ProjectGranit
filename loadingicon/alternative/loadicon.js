@@ -10,8 +10,10 @@ var bar = new ldBar(loadBubble, {
  "preset": "text",
  // laddningstyp: fyll bubbla
  "type":"fill",
+ //Fyll från vänster till höger
+ "fill-dir":"ltr",
  //Fyll bubbla färg, färg för mindre bubblor, antal bubblor i mönster, hastighet
- //"fill":"data:ldbar/res,text(0,1,#ff9)",
+ //"fill":"data:ldbar/res,text(#ff9)",
  //Fyllnads tid 5 sec
  "duration":"5"
 });
