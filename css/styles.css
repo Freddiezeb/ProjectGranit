@@ -11,6 +11,9 @@
   align-items: center;
   margin: 0 auto;
 }
+.wrapper_display_none{
+  display:none;
+}
 
 /* BIG BUBBLES */
 #box0{
@@ -158,10 +161,17 @@ h1{
   background-size: cover;
   background-attachment: fixed;
 }
-.headline h1{
+/*On bubbleload*/
+.headline1 h1{
+  margin-top: -8%;
+  text-align: center;
+}
+/* After bubbleload*/
+.headline2 h1{
   margin-top: 10%;
   text-align: center;
 }
+
 .select1{
   margin-left: 60px;
   margin-bottom: 5%;

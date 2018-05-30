@@ -5,6 +5,10 @@
         <meta content="utf-8" http-equiv="encoding">
         <link href="css/styles.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" type="text/css" href="css/dropdownstyle.css">
+        <!--Från https://loading.io/progress/ -->
+        <link rel="stylesheet" href="libs/loading-bar/loading-bar.css">
+        <!-- Egen style för loading -->
+        <link rel="stylesheet" href="css/loadicon.css">
         <title></title>
     </head>
     <body id="airBody">
@@ -18,7 +22,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
         <script src="https://www.gstatic.com/charts/loader.js" type="text/javascript"></script>
         <script src="https://sdk.amazonaws.com/js/aws-sdk-2.241.1.min.js"></script>
-
 
         <!-- VERTICAL NAV BAR -->
         <div class="vertical-menu">
@@ -49,13 +52,21 @@
                     <p>Go back</p></a>
             </div>
         </div>
+        <!--Head title on load-->
+        <div class="headline1">
+            <h1>AIR</h1>
+        </div>
+
+        <!-- Loading for charts-->
+        <div id="load" class="ldBar" style="width:500px;height:500px"></div>
 
         <!-- All content with charts  -->
-        <div id="wrapper">
+        <div id="wrapper" class="wrapper_display_none">
             <div id="box2">
-                <div class="headline">
-                    <h1>AIR</h1>
-                </div>
+              <!--Head title after load-->
+              <div class="headline2">
+                  <h1>AIR</h1>
+              </div>
 
                 <!-- Dates from and to  -->
                 <form class="" action="index.html" method="post">
@@ -110,5 +121,11 @@
         <script src="js/logic.js" type="text/javascript"></script>
         <script src="js/gaugeChart.js" type="text/javascript"></script>
         <script src="js/sortData.js" type="text/javascript"></script>
+
+        <!-- Från https://loading.io/progress/ -->
+        <script type="text/javascript" src="libs/loading-bar/loading-bar.js"></script>
+        <script type="text/javascript" src="libs/loading-bar/loading-bar.min.js"></script>
+        <!-- Script för att modifiera loading-->
+        <script type="text/javascript" src="js/loadicon.js"></script>
     </body>
 </html>
