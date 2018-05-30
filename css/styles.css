@@ -399,8 +399,9 @@ color: darkslategrey
     margin-left: calc(35vw - 400px);
   }
   .headline h1{
+    width: 320px;
     margin-top: 15%;
-    margin-left: calc(35vw - 550px);
+    margin-left: calc(35vw - 60px);
   }
   .charts p{
     text-align: left;
@@ -408,18 +409,36 @@ color: darkslategrey
 }
 
 @media screen and (max-width: 550px) {
-  /*.vertical-menu {
+  .vertical-menu {
+    width: 320px;
+    height: 0px;
+    display: inline-block;
+    margin-top: -40px;
+    margin-bottom: 190px;
+    //margin-left: calc(35vw - 60px);
+  }
+    .bubble2{
     width: 50px;
     height: 50px;
-    display: block;
-    float: left;
-  }*/
-  /*.bubble2{
+    display: inline-block;
+  }
+  .select1{
+    /*margin-left: 60px;*/
+    margin-bottom: 5%;
+    /*margin-left: 335px;*/
+    margin-left: 0px;
+  }
+  .charts, #temperature_chart, #humidity_chart, #x_level_light_chart, #movement_chart, #sound_level_chart{
     width: 50px;
-    height: 50px;
-    display: block;
-    float: left;
-  }*/
-
+    margin-left: calc(35vw - 470px)
+  }
+  .headline h1{
+    width: 320px;
+    margin-top: 15%;
+    margin-left: 0px;
+}
+/*.customp, p{
+  margin-left: -270px;
+}*/
 
 }
