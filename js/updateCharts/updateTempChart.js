@@ -5,19 +5,43 @@ function updateTemperatureChart(arduino_due_1_result, sensmitter_1_result, sensm
 
     //Sets the length of how much data will be displayed
         if(maxLength === null)
-     maxLength = 8;  
+     maxLength = 8;
 
-    //Use AddToArray to load in all the data 
+    //Use AddToArray to load in all the data
     AddToArray(temperatureArray, arduino_due_1_result.data.temperature, maxLength);
     AddToArray(temperatureTimeArray, myDate, maxLength);
 
-    //Array with colum and row names 
+    //Array with colum and row names
     var names = [
         "Time",
         "arduino_due_1"
     ]
-    
-    var options = {legend:{position:'top'}}
+
+    var options = {
+        legend:{position:'top'},
+        //Backgroundcolor for linecharts
+        backgroundColor:'transparent',
+        //Horisontal axis
+        hAxis:{
+            //textstyle
+            textStyle: {
+                fontName: 'Roboto',
+                fontSize: 12,
+                // The color of the text.
+                color: '#fff'
+            }
+        },
+        //vertical axis
+        vAxis:{
+            //textstyle
+            textStyle: {
+                fontName: 'Roboto',
+                fontSize: 12,
+                // The color of the text.
+                color: '#fff'
+            }
+        }
+    }
 
     //Array that start with the names from above
     //Then we fill it with the data from arduino_due_1
@@ -30,7 +54,7 @@ function updateTemperatureChart(arduino_due_1_result, sensmitter_1_result, sensm
         }
         else
         {
-            arduino_due_1_Array.push([temperatureTimeArray[i - 1], temperatureArray[i - 1]]);        
+            arduino_due_1_Array.push([temperatureTimeArray[i - 1], temperatureArray[i - 1]]);
         }
     }
 
@@ -45,13 +69,13 @@ function startTemperatureChart(result, maxLength)
 
     //Sets the length of how much data will be displayed
         if(maxLength === null)
-     maxLength = 8;  
+     maxLength = 8;
 
-    //Use AddToArray to load in all the data 
+    //Use AddToArray to load in all the data
     AddToArray(temperatureArray, result.data.temperature, maxLength);
     AddToArray(temperatureTimeArray, myDate, maxLength);
 
-    //Array with colum and row names 
+    //Array with colum and row names
     var names = [
         "Time",
         "arduino_due_1"
@@ -68,7 +92,7 @@ function startTemperatureChart(result, maxLength)
         }
         else
         {
-            arduino_due_1_Array.push([temperatureTimeArray[i - 1], temperatureArray[i - 1]]);        
+            arduino_due_1_Array.push([temperatureTimeArray[i - 1], temperatureArray[i - 1]]);
         }
     }
 

@@ -1,7 +1,7 @@
 .ldBar-label{
     position: absolute;
     top: 50%;
-    left: 100%;
+    left: 50%;
     transform: translate(-50%,-50%);
     color:#fff;
     font-weight: bold;
