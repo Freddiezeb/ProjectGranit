@@ -11,9 +11,6 @@
   align-items: center;
   margin: 0 auto;
 }
-.wrapper_display_none{
-  display:none;
-}
 
 /* BIG BUBBLES */
 #box0{
@@ -105,17 +102,10 @@ h1{
   background-size: cover;
   background-attachment: fixed;
 }
-/*On bubbleload*/
-.headline1 h1{
-  margin-top: -8%;
-  text-align: center;
-}
-/* After bubbleload*/
-.headline2 h1{
+.headline h1{
   margin-top: 10%;
   text-align: center;
 }
-
 .select1{
   margin-left: 60px;
   margin-bottom: 5%;
@@ -456,3 +446,34 @@ color: darkslategrey
 }*/
 
 }
+
+input.submit {
+	  background-color: #245861;
+	  box-shadow: none;
+	  padding: 10px;
+	  font-family: 'Futura', sans-serif;
+	  color: white;
+	}
+
+
+	input.submit:hover {
+	  color: #245861;
+	  background-color: white;
+	}
+
+
+	select#date_to.select {
+	  box-shadow: none;
+	  font-family: 'Futura', sans-serif;
+	}
+
+
+	select#date_from.select {
+	  box-shadow: none;
+	  font-family: 'Futura', sans-serif;
+	}
+
+
+	div#button {
+	  margin-top: 4.5%;
+	}
