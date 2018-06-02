@@ -1,32 +1,37 @@
-//Arrays that are being used in update...chart.js
-var temperatureArray = [];
-var temperatureTimeArray = [];
-
-var pressureArray = [];
-
-var humidityArray = [];
-var humidityTimeArray = [];
-
-var lightLevelArray = [];
-var lightLevelTimeArray = [];
-
-var soundArray = [];
-var soundTimeArray = [];
-
-var movementArray = [];
-var movementTimeArray = [];
-
-var tempContainer = [];
 
 
-
-var lightLevelContainer = [];
-lightLevelContainer.push(["Time", "Sensmitter1", "Sensmitter2", "Sensmitter3"]);
+var first = true
 var hudituihdsg = Date.now();
 //lightLevelContainer.push([new Date((hudituihdsg - 3600000) * 1000), 10, 37, 34]);
 
 
-console.log(lightLevelContainer);
+var options = {
+                legend:{position:'top'},
+                //Backgroundcolor for linecharts
+                backgroundColor:'transparent',
+                //Horisontal axis
+                hAxis:{
+                    //textstyle
+                    textStyle: {
+                        fontName: 'Roboto',
+                        fontSize: 12,
+                        // The color of the text.
+                        color: '#fff'
+                    }
+                },
+                //vertical axis
+                vAxis:{
+                    //textstyle
+                    textStyle: {
+                        fontName: 'Roboto',
+                        fontSize: 12,
+                        // The color of the text.
+                        color: '#fff'
+                    }
+                }
+}
+
+
 
 fill("SensorsIOTAPLab");
 
@@ -47,7 +52,7 @@ if(page == "air.html")
     //All the charts displayed in air.html
     lineChart(null, 'temperature_chart', null);
     lineChart(null, 'humidity_chart', null);
-    gaugeChart(null, "pressure_chart", null);
+    lineChart(null, "pressure_chart", null);
 }
 
 if(page == "activity.html")
@@ -57,23 +62,47 @@ if(page == "activity.html")
     lineChart(null, "movement_chart", null);
     lineChart(null, "sound_level_chart", null);
 }
+function steppedArea()
+{
+     var element = document.getElementById('chart_div')
+    
+    var array = [
+          ['a','d'],
+          ['w',7.9],
+          ['w',6.5],
+          ['w',6.4],
+          ['w',6.2]
+        ];
+      var data = google.visualization.arrayToDataTable(array);
+        var options = {
+          title: 'Number of people in room',
+          vAxis: {title: ''},
+          isStacked: true,
+          backgroundColor: 'transparent'
+        };
 
+        var chart = new google.visualization.SteppedAreaChart(document.getElementById('chart_div'));
+          chart.draw(data, options);
+         
+}
 if(page == "divs.html")
 {
-    //All the charts displayed in divs.html
-    histogramChart(null, "number_of_people_chart", null);
+    
+steppedArea()
 }
+
 
 if(page == "custom.html")
 {
     //All the charts displayed in custom.html
     lineChart(null, 'temperature_chart', null);
     lineChart(null, 'humidity_chart', null);
-    gaugeChart(null, "pressure_chart", null);
+    lineChart(null, "pressure_chart", null);
     lineChart(null, "x_level_light_chart", null);
     lineChart(null, "movement_chart", null);
     lineChart(null, "sound_level_chart", null);
-    histogramChart(null, "number_of_people_chart", null);
+    steppedArea()
+   
 }
 
 //Comment
@@ -95,37 +124,21 @@ function CallFunction(functionName, functionArgument)
 //The update...Chart methods is placed in a seperate .js for more feasable stucture
 function arduino_due_1(result)
 {
+    var date = new Date(result.timestamp *999);
     console.log("arduino_due_1");
     console.log(result);
-
-    //Everything displayed in air.html
-    if(page == "air.html")
-    {
-        updateTemperatureChart(result, null, null, null, null);
-
-        //FIXME: Pressure needs the right results from sensmitters
-        updatePressureChart(null, null, null, null);
-        updateHumidityChart(result, null, null, null, null);
-    }
-
-    //Everything displayed in activity.html
-    if(page == "activity.html")
-    {
-        //        updateLightLevelChart(result, null, null, null, null);  
-        updateSoundLevelChart(result, null, null, null, null);  
-        updateMovementChart(result, null, null, null, null);  
-    }
-
-    //Everything displayed in custom.html
-    if(page == "custom.html")
-    {
-        updateTemperatureChart(result, null, null, null, null);
-        updatePressureChart(null, null, null, null);
-        updateHumidityChart(result, null, null, null, null);
-        updateLightLevelChart(result, null, null, null, null);  
-        updateSoundLevelChart(result, null, null, null, null);  
-        updateMovementChart(result, null, null, null, null);
-    }
+    if(first)
+        {
+             fakehistoricadata(date)
+            first = false
+        }
+   
+    
+    updateMovement(result, 1, options)
+    updateHumidity(result, 4, options )
+ 
+    updateTemperature(result,4, options)
+    updateSoundLevel(result, 1, options)
 }
 
 //This method gives us all the data from hue_1
@@ -164,8 +177,17 @@ function lab_state(result)
 //So this is where we do everything related to this data
 function phone_1(result)
 {
+    var date = new Date(result.timestamp *999);
+      if(first)
+        {
+             fakehistoricadata(date)
+            first = false
+        }
     console.log("phone_1")
     console.log(result);
+    
+    updateMovement(result, 2, options)
+    updateSoundLevel(result, 2, options)
 }
 
 //This method gives us all the data from axis_old_camera
@@ -176,76 +198,74 @@ function axis_old_camera(result)
     console.log(result);
 }
 
-var first = true;
+
+
+
+
+
+
 //This method gives us all the data from sensmitter_1
 //So this is where we do everything related to this data
 function sensmitter_1(result)
 {
-    if(first)
-    {
-        lightLevelContainer.push([new Date((result.timestamp - 1000) * 1000), 10, 37, 34]);
-        first = false;
-    }
-    console.log("sensmitter_1")
-    console.log(result);
-    console.log(result.data.light_level);
-
-    var date = new Date(result.timestamp * 1000);
-    var tempsensmitter2 = lightLevelContainer[lightLevelContainer.length -1][2];
-    var tempSensmitter3 = lightLevelContainer[lightLevelContainer.length -1][3];
-
-    //    lightLevelContainer.push(date, result.data.light_level, temp)
-    lightLevelContainer.push([date, result.data.light_level, tempsensmitter2, tempSensmitter3]);
-    lineChart(lightLevelContainer, "x_level_light_chart", null);
+    var date = new Date(result.timestamp *999);
+      if(first)
+        {
+             fakehistoricadata(date)
+            first = false
+        }
+    updateLightLevel(result, 1, options)
+    updateTemperature(result,1, options)
+    updateHumidity(result, 1, options)
+   
+    
 }
 
 //This method gives us all the data from sensmitter_2
 //So this is where we do everything related to this data
 function sensmitter_2(result)
 {
-    if(first)
-    {
-        lightLevelContainer.push([new Date((result.timestamp - 1000) * 1000), 10, 37, 34]);
-        first = false;
-    }
-    console.log("sensmitter_2")
-    console.log(result);
-    //    lightLevelContainer.push(new Date(result.timestamp * 1000), lightLevelContainer[lightLevelContainer.length -1][1], result.data.light_level)
-    //    lineChart(lightLevelContainer, "x_level_light_chart", null);
-
-    var date = new Date(result.timestamp * 1000);
-    var tempSensmitter1 = lightLevelContainer[lightLevelContainer.length -1][1];
-    var tempSensmitter3 = lightLevelContainer[lightLevelContainer.length -1][3];
-    //    lightLevelContainer.push(date, result.data.light_level, temp)
-    lightLevelContainer.push([date, tempSensmitter1, result.data.light_level, tempSensmitter3]);
-    lineChart(lightLevelContainer, "x_level_light_chart", null);
+    var date = new Date(result.timestamp *999);
+      if(first)
+        {
+             fakehistoricadata(date)
+            first = false
+        }
+    updateLightLevel(result, 2, options)
+    updateTemperature(result,2, options)
+     updateHumidity(result, 2, options)
+    
 }
 
 //This method gives us all the data from sensmitter_3
 //So this is where we do everything related to this data
 function sensmitter_3(result)
 {
-    if(first){
-        lightLevelContainer.push([new Date((result.timestamp - 1000) * 1000), 10, 37, 34]);
-        first = false;
-    }
-    console.log("sensmitter_3")
-    console.log(result);
-
-    var date = new Date(result.timestamp * 1000);
-    var tempSensmitter1 = lightLevelContainer[lightLevelContainer.length -1][1];
-    var tempSensmitter2 = lightLevelContainer[lightLevelContainer.length -1][2];
-    //    lightLevelContainer.push(date, result.data.light_level, temp)
-    lightLevelContainer.push([date, tempSensmitter1, tempSensmitter2, result.data.light_level]);
-    lineChart(lightLevelContainer, "x_level_light_chart", null);
+    var date = new Date(result.timestamp *999);
+      if(first)
+        {
+             fakehistoricadata(date)
+            first = false
+        }
+    updateLightLevel(result, 3, options)
+    updateTemperature(result,3, options)
+     updateHumidity(result, 3, options)
+   
 }
 
 //This method gives us all the data from cameraACCC8E7E6E9F
 //So this is where we do everything related to this data
 function cameraACCC8E7E6E9F(result)
 {
+    var date = new Date(result.timestamp *999);
+      if(first)
+        {
+             fakehistoricadata(date)
+            first = false
+        }
     console.log("cameraACCC8E7E6E9F")
     console.log(result);
+    updatePeopleCount(result)
 }
 
 //This method gives us all the data from eye_contact_1
