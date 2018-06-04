@@ -1,10 +1,10 @@
 AWS.config.update({
     region: "us-east-1",
     //    endpoint: 'a1y7d41s0oj85v.iot.us-east-1.amazonaws.com',
-    // accessKeyId default can be used while using the downloadable version of DynamoDB. 
+    // accessKeyId default can be used while using the downloadable version of DynamoDB.
     // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
     accessKeyId: "AKIAIVBVKDOAE3AASRHA",
-    // secretAccessKey default can be used while using the downloadable version of DynamoDB. 
+    // secretAccessKey default can be used while using the downloadable version of DynamoDB.
     // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
     secretAccessKey: "Z46irEIjQf4JUF8fqH3n0mhiDGgbqI+LdyFYq6Hk"
 });
@@ -32,7 +32,7 @@ function fill(table)
 //                {
 ////                    startTemperatureChart(data.Items[index].payload, null);
 ////                    startHumidityChart(data.Items[index].payload, null);
-//                        
+//
 //                }
 //
 //                if(page == "activity.html")
@@ -52,7 +52,8 @@ function fill(table)
 //                }
 //      console.log(data.Items[index].uid);
             }
-      
+            // when chars got data: display charts
+            displayCharts();
         }
 
     }
@@ -82,18 +83,3 @@ function fillScatterChartWithHistoricalData(table, scatterChart)
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
