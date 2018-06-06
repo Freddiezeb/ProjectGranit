@@ -22,6 +22,17 @@ pressureContainer.push(["Time", "Sensmitter1"]);
 var numPeopleContainer = [];
 numPeopleContainer.push(["Time", "camera"]);
 
+var hueContainer = []
+hueContainer.push(["Time", "hue", "brightness", "saturation", "power_state"])
+
+var blindsContainer =[]
+blindsContainer.push(["Time", "state"])
+
+var eyeContactContainer =[]
+eyeContactContainer.push(["Time", "detected_faces", "eye_contacts", "looking_towards_camera"])
+
+
+
 function fakehistoricadata(date)
 {
 
@@ -32,6 +43,9 @@ function fakehistoricadata(date)
     soundLevelContainer.push([date, 66, 56]);
     pressureContainer.push([date, 1000]);
     numPeopleContainer.push([date, 2]);
+    hueContainer.push([date, 10,10,10,0])
+    blindsContainer.push([date, 1, 0, 0])
+    eyeContactContainer.push([date, 2, 1, 1])
 
 
 }
@@ -289,6 +303,54 @@ function updateLabState(result)
     }
 }
 
+function updateHue(result)
+{
+    var element = document.getElementById('hue_chart')
+    if(typeof(element) != 'undefined' && element != null)
+    {
+    var power_state;
+    var brightness;
+    var hue;
+    var saturation;
+    
+    var date = new Date(result.timestamp*1000)
+    power_state = result.command.power_state;
+    brightness = result.command.brightness;
+    hue = result.command.hue;
+    saturation = result.command.saturation;
+   
+    
+    Add(hueContainer, [date.toString().substr(0,24), parseFloat(power_state), parseFloat(brightness), parseFloat(hue), parseFloat(saturation)])
+    
+    lineChart(hueContainer, "hue_chart", options)
+    }
+    
+}
+
+function updateBlinds(result)
+{
+    var element = document.getElementById('blinds_chart')
+    if(typeof(element) != 'undefined' && element != null)
+    {
+
+    var state;
+    
+    var date = new Date(result.timestamp*1000)
+    
+    state = result.command
+    
+    
+    Add(blindsContainer, [date.toString().substr(0,24), parseFloat(state)])
+    
+    lineChart(blindsContainer, "blinds_chart", options)
+    }
+}
+
+    
+    
+
+
+
 function updatePeopleCount(result) 
 {
     var element = document.getElementById('chart_div')
@@ -330,6 +392,21 @@ function updateEyeContact(result)
     var element = document.getElementById('chart_div')
     if(typeof(element) != 'undefined' && element != null)
     {
-        steppedAreaChart(null, "chart_div", options);
+     
+        
+        var detected_faces;
+        var eye_contacts;
+        var looking_towards_camera;
+        var date = new Date(result.timestamp * 1000);
+        
+        detected_faces = result.data.detected_faces;
+        eye_contacts = result.data.eye_contacts;
+        looking_towards_camera = result.data.looking_towards_camera;
+        
+        Add(eyeContactContainer, [date.toString().substr(0,24), parseFloat(detected_faces), parseFloat(eye_contacts), parseFloat(looking_towards_camera)])
+        
+        lineChart(eyeContactContainer, "eye_chart", options)
+        
+        
     }
 }

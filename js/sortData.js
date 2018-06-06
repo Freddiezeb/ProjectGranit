@@ -82,18 +82,21 @@ function steppedArea()
     };
 
     var chart = new google.visualization.SteppedAreaChart(document.getElementById('chart_div'));
-    //chart.draw(data, options);
+    chart.draw(data, options);
 
 }
 if(page == "divs.html")
 {
-
+    lineChart(null, "hue_chart", null)
+    lineChart(null, "blinds_chart", null)
     steppedArea()
+    
+   
 
 }
 if(page == "camera.html")
 {
-//    steppedAreaChart(null, "chart_div", null);
+   lineChart(null, "eye_chart", null)
 }
 
 if(page == "custom.html")
@@ -151,6 +154,14 @@ function hue_1(result)
 {
     console.log("hue_1")
     console.log(result);
+    var date = new Date(1528214746 *999);
+    if(first)
+        {
+            fakehistoricadata(date.toString().substr(0,24))
+            first = false;
+        }
+    
+    updateHue(result);
 }
 
 //This method gives us all the data from blinds_1
@@ -159,6 +170,14 @@ function blinds_1(result)
 {
     console.log("blinds_1")
     console.log(result);
+      var date = new Date(1528214746 *999);
+    if(first)
+        {
+            fakehistoricadata(date.toString().substr(0,24))
+            first = false;
+        }
+    
+    updateBlinds(result);
 }
 
 //This method gives us all the data from person_count
@@ -278,7 +297,15 @@ function eye_contact_1(result)
 {
     console.log("eye_contact_1")
     console.log(result);
-//    updateEyeContact(result);
+    
+    var date = new Date(1528214746 *999);
+    if(first)
+    {
+        fakehistoricadata(date.toString().substr(0,24))
+        first = false
+    }
+    
+   updateEyeContact(result);
 }
 
 //This method gives us all the data from user_feedback
