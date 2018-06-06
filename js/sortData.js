@@ -6,29 +6,29 @@ var hudituihdsg = Date.now();
 
 
 var options = {
-                legend:{position:'top'},
-                //Backgroundcolor for linecharts
-                backgroundColor:'transparent',
-                //Horisontal axis
-                hAxis:{
-                    //textstyle
-                    textStyle: {
-                        fontName: 'Roboto',
-                        fontSize: 12,
-                        // The color of the text.
-                        color: '#fff'
-                    }
-                },
-                //vertical axis
-                vAxis:{
-                    //textstyle
-                    textStyle: {
-                        fontName: 'Roboto',
-                        fontSize: 12,
-                        // The color of the text.
-                        color: '#fff'
-                    }
-                }
+    legend:{position:'top'},
+    //Backgroundcolor for linecharts
+    backgroundColor:'transparent',
+    //Horisontal axis
+    hAxis:{
+        //textstyle
+        textStyle: {
+            fontName: 'Roboto',
+            fontSize: 12,
+            // The color of the text.
+            color: '#fff'
+        }
+    },
+    //vertical axis
+    vAxis:{
+        //textstyle
+        textStyle: {
+            fontName: 'Roboto',
+            fontSize: 12,
+            // The color of the text.
+            color: '#fff'
+        }
+    }
 }
 
 
@@ -64,33 +64,37 @@ if(page == "activity.html")
 }
 function steppedArea()
 {
-     var element = document.getElementById('chart_div')
-    
-    var array = [
-          ['a','d'],
-          ['w',7.9],
-          ['w',6.5],
-          ['w',6.4],
-          ['w',6.2]
-        ];
-      var data = google.visualization.arrayToDataTable(array);
-        var options = {
-          title: 'Number of people in room',
-          vAxis: {title: ''},
-          isStacked: true,
-          backgroundColor: 'transparent'
-        };
+    var element = document.getElementById('chart_div')
 
-        var chart = new google.visualization.SteppedAreaChart(document.getElementById('chart_div'));
-          //chart.draw(data, options);
-         
+    var array = [
+        ['a','d'],
+        ['w',7.9],
+        ['w',6.5],
+        ['w',6.4],
+        ['w',6.2]
+    ];
+    var data = google.visualization.arrayToDataTable(array);
+    var options = {
+        title: 'Number of people in room',
+        vAxis: {title: ''},
+        isStacked: true,
+        backgroundColor: 'transparent'
+    };
+
+    var chart = new google.visualization.SteppedAreaChart(document.getElementById('chart_div'));
+    //chart.draw(data, options);
+
 }
 if(page == "divs.html")
 {
-    
-steppedArea()
-}
 
+    steppedArea()
+
+}
+if(page == "camera.html")
+{
+//    steppedAreaChart(null, "chart_div", null);
+}
 
 if(page == "custom.html")
 {
@@ -102,7 +106,7 @@ if(page == "custom.html")
     lineChart(null, "movement_chart", null);
     lineChart(null, "sound_level_chart", null);
     steppedArea()
-   
+
 }
 
 //Comment
@@ -128,15 +132,15 @@ function arduino_due_1(result)
     console.log("arduino_due_1");
     console.log(result);
     if(first)
-        {
-             fakehistoricadata(date.toString().substr(0,24))
-            first = false
-        }
-   
-    
+    {
+        fakehistoricadata(date.toString().substr(0,24))
+        first = false
+    }
+
+
     updateMovement(result, 1, options)
     updateHumidity(result, 4, options )
- 
+
     updateTemperature(result,4, options)
     updateSoundLevel(result, 1, options)
 }
@@ -179,14 +183,14 @@ function lab_state(result)
 function phone_1(result)
 {
     var date = new Date(1528214746 *999);
-      if(first)
-        {
-             fakehistoricadata(date.toString().substr(0,24))
-            first = false
-        }
+    if(first)
+    {
+        fakehistoricadata(date.toString().substr(0,24))
+        first = false
+    }
     console.log("phone_1")
     console.log(result);
-    
+
     updateMovement(result, 2, options)
     updateSoundLevel(result, 2, options)
 }
@@ -200,28 +204,21 @@ function axis_old_camera(result)
 }
 
 
-
-
-
-
-
 //This method gives us all the data from sensmitter_1
 //So this is where we do everything related to this data
 function sensmitter_1(result)
 {
     var date = new Date(1528214746 *999);
-      if(first)
-        {
-             fakehistoricadata(date.toString().substr(0,24))
-            first = false
-        }
+    if(first)
+    {
+        fakehistoricadata(date.toString().substr(0,24))
+        first = false
+    }
     updateLightLevel(result, 1, options)
     updateTemperature(result,1, options)
     updateHumidity(result, 1, options)
     updatePressure(result, 1, options)
     console.log(result)
-   
-    
 }
 
 //This method gives us all the data from sensmitter_2
@@ -229,17 +226,17 @@ function sensmitter_1(result)
 function sensmitter_2(result)
 {
     var date = new Date(1528214746 *999);
-      if(first)
-        {
-             fakehistoricadata(date.toString().substr(0,24))
-            first = false
-        }
+    if(first)
+    {
+        fakehistoricadata(date.toString().substr(0,24))
+        first = false
+    }
     updateLightLevel(result, 2, options)
     updateTemperature(result,2, options)
-     updateHumidity(result, 2, options)
-   
-     console.log(result)
-    
+    updateHumidity(result, 2, options)
+
+    console.log(result)
+
 }
 
 //This method gives us all the data from sensmitter_3
@@ -247,17 +244,17 @@ function sensmitter_2(result)
 function sensmitter_3(result)
 {
     var date = new Date(1528214746 *999);
-      if(first)
-        {
-             fakehistoricadata(date.toString().substr(0,24))
-            first = false
-        }
+    if(first)
+    {
+        fakehistoricadata(date.toString().substr(0,24))
+        first = false
+    }
     updateLightLevel(result, 3, options)
     updateTemperature(result,3, options)
-     updateHumidity(result, 3, options)
-    
-     console.log(result)
-   
+    updateHumidity(result, 3, options)
+
+    console.log(result)
+
 }
 
 //This method gives us all the data from cameraACCC8E7E6E9F
@@ -265,11 +262,11 @@ function sensmitter_3(result)
 function cameraACCC8E7E6E9F(result)
 {
     var date = new Date(1528214746 *999);
-      if(first)
-        {
-             fakehistoricadata(date.toString().substr(0,24))
-            first = false
-        }
+    if(first)
+    {
+        fakehistoricadata(date.toString().substr(0,24))
+        first = false
+    }
     console.log("cameraACCC8E7E6E9F")
     console.log(result);
     updatePeopleCount(result)
@@ -281,14 +278,16 @@ function eye_contact_1(result)
 {
     console.log("eye_contact_1")
     console.log(result);
+//    updateEyeContact(result);
 }
 
 //This method gives us all the data from user_feedback
 //So this is where we do everything related to this data
-function user_feedback(result)
+function user_feedback(result) //nbr_of_people
 {
     console.log("user_feedback")
     console.log(result);
+    updateUserFeedback(result);
 }
 
 //This function takes in an empty array, the data that we want to store 
@@ -296,18 +295,18 @@ function user_feedback(result)
 //Used in all of the update...Chart.js
 function AddToArray(array, data, maxLenght)
 {
-   
-                array.push(data);
+
+    array.push(data);
 
     if(array.length > maxLenght)
     {
         for(var i = 1; i < array.length - 1; i++)
         {
             for(var j = 0; j < array[i].length; j++)
-                {
-                    array[i][j] = array[i + 1][j]
-                }
+            {
+                array[i][j] = array[i + 1][j]
+            }
         }
-            array.pop()
+        array.pop()
     }
 }

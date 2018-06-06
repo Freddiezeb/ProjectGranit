@@ -7,16 +7,16 @@
         <link rel="stylesheet" type="text/css" href="css/dropdownstyle.css">
         <title></title>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
+        <script type="text/javascript">
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
 
-    </script>
+        </script>
 
-    <!--Från https://loading.io/progress/ -->
-    <link rel="stylesheet" href="libs/loading-bar/loading-bar.css">
-    <!-- Egen style för loading -->
-    <link rel="stylesheet" href="css/loadicon.css">
+        <!--Från https://loading.io/progress/ -->
+        <link rel="stylesheet" href="libs/loading-bar/loading-bar.css">
+        <!-- Egen style för loading -->
+        <link rel="stylesheet" href="css/loadicon.css">
 
     </head>
     <body id="divsBody">
@@ -71,39 +71,51 @@
 
         <div id="wrapper" class="wrapper_display_none">
             <div id="box2">
-              <!-- After loading bubble-->
+                <!-- After loading bubble-->
                 <div class="headline2">
                     <h1>DIVS</h1>
                 </div>
 
                 <form class="" action="index.html" method="post">
-                  <div id="box">
-                  <div class="select1">
-                    <p>Data from:</p>
-                    <select class="select" id="date_from" data-size="5">
+                    <div id="box">
+                        <div class="select1">
+                            <p>Data from:</p>
+                            <select class="select" id="date_from" data-size="5">
 
-                    </select>
-                  </div>
-                  <div class="select2">
-                    <p>Data to:</p>
-                    <select class="select" name="" id="date_to">
+                            </select>
+                        </div>
+                        <div class="select2">
+                            <p>Data to:</p>
+                            <select class="select" name="" id="date_to">
 
-                    </select>
-                  </div>
-                  <div id="button">
-                  <input class="submit "type="submit" value="submit">
-                  </div>
-                  </div>
+                            </select>
+                        </div>
+                        <div id="button">
+                            <input class="submit "type="submit" value="submit">
+                        </div>
+                    </div>
                 </form>
 
                 <!-- NUMBERS OF PEOPLE/ HISTORY -->
-                <div class="charts">
-                    <p>Number of people</p>
-                    <div id="chart_div" style="width: 600px; height: 300px;"></div>
+                <!--
+<div class="charts">
+<p>Number of people</p>
+<div id="chart_div" style="width: 600px; height: 300px;"></div>
+</div>
+-->
+
+                <div id="nrOfPeople">
+                    <p>Number of People:</p>
                 </div>
-                
-                 
-                
+
+                <div id="labState">
+                    <p>Lab State:</p>
+                </div>
+
+                <div id="uFlabState">
+                    <p>User Feedback Lab State:</p>
+                    <p>Numer of Submitted User Feedback:</p>
+                </div>
             </div>
         </div>
 
