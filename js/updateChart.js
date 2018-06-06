@@ -31,8 +31,6 @@ blindsContainer.push(["Time", "state"])
 var eyeContactContainer =[]
 eyeContactContainer.push(["Time", "detected_faces", "eye_contacts", "looking_towards_camera"])
 
-
-
 function fakehistoricadata(date)
 {
 
@@ -46,8 +44,6 @@ function fakehistoricadata(date)
     hueContainer.push([date, 10,10,10,0])
     blindsContainer.push([date, 1, 0, 0])
     eyeContactContainer.push([date, 2, 1, 1])
-
-
 }
 
 function updateLightLevel(result, index, options)
@@ -61,18 +57,21 @@ function updateLightLevel(result, index, options)
         var sensmitter3
 
         var date = new Date(result.timestamp * 1000);
+
         if(index ==1)
         {
             sensmitter1 = result.data.light_level;
             sensmitter2 = lightLevelContainer[lightLevelContainer.length -1][2];
             sensmitter3 = lightLevelContainer[lightLevelContainer.length -1][3];
         }
+
         if(index ==2)
         {
             sensmitter2 = result.data.light_level;
             sensmitter1 = lightLevelContainer[lightLevelContainer.length -1][1];
             sensmitter3 = lightLevelContainer[lightLevelContainer.length -1][3];
         }
+
         if(index ==3)
         {
             sensmitter3 = result.data.light_level;
@@ -80,17 +79,13 @@ function updateLightLevel(result, index, options)
             sensmitter2 = lightLevelContainer[lightLevelContainer.length -1][2];
         }
 
-
         Add(lightLevelContainer, [date.toString().substr(0,24), parseFloat(sensmitter1), parseFloat(sensmitter2) , parseFloat(sensmitter3) ], 20)
         lineChart(lightLevelContainer, "x_level_light_chart", options);
-
     }
 }
 
 function Add(array, data, maxLenght)
 {
-
-
     array.push(data)
 
     if(array.length > maxLenght)
@@ -100,8 +95,6 @@ function Add(array, data, maxLenght)
     }
 }
 
-
-
 function updateTemperature(result, index, options)
 {
     var element = document.getElementById('temperature_chart')
@@ -110,12 +103,9 @@ function updateTemperature(result, index, options)
         var sensmitter1
         var sensmitter2
         var sensmitter3
-
         var arduino
 
-
         var date = new Date(result.timestamp * 1000);
-
 
         if(index ==1)
         {
@@ -124,6 +114,7 @@ function updateTemperature(result, index, options)
             sensmitter3 = temperatureContainer[temperatureContainer.length -1][3];
             arduino = temperatureContainer[temperatureContainer.length -1][4];
         }
+
         if(index ==2)
         {
             sensmitter2 = result.data.temperature;
@@ -131,6 +122,7 @@ function updateTemperature(result, index, options)
             sensmitter3 = temperatureContainer[temperatureContainer.length -1][3];
             arduino = temperatureContainer[temperatureContainer.length -1][4];
         }
+
         if(index ==3)
         {
             sensmitter3 = result.data.temperature;
@@ -146,8 +138,6 @@ function updateTemperature(result, index, options)
             sensmitter3 = temperatureContainer[temperatureContainer.length -1][3];
             sensmitter1 = temperatureContainer[temperatureContainer.length -1][1];
             sensmitter2 = temperatureContainer[temperatureContainer.length -1][2];
-
-
         }
 
         //temperatureContainer.push([date, sensmitter1, sensmitter2 , sensmitter3, arduino]);
@@ -159,8 +149,6 @@ function updateTemperature(result, index, options)
         console.log(sensmitter2)
         console.log(sensmitter3)
     }
-
-
 }
 
 function updateHumidity(result, index, options)
@@ -171,9 +159,7 @@ function updateHumidity(result, index, options)
         var sensmitter1
         var sensmitter2
         var sensmitter3
-
         var arduino
-
 
         var date = new Date(result.timestamp * 1000);
         if(index ==1)
@@ -204,15 +190,12 @@ function updateHumidity(result, index, options)
             sensmitter3 = humidityContainer[humidityContainer.length -1][3];
             sensmitter1 = humidityContainer[humidityContainer.length -1][1];
             sensmitter2 = humidityContainer[humidityContainer.length -1][2];
-
-
         }
 
         //humidityContainer.push([date, sensmitter1, sensmitter2 , sensmitter3, arduino]);
         Add(humidityContainer,[date.toString().substr(0,24),parseFloat(sensmitter1), parseFloat(sensmitter2) , parseFloat(sensmitter3), arduino], 20)
         lineChart(humidityContainer, "humidity_chart", options);
     }
-
 }
 
 function updateMovement(result, index, options)
@@ -222,8 +205,6 @@ function updateMovement(result, index, options)
     {
         var arduino
         var phone_1
-
-
 
         var date = new Date(result.timestamp * 1000);
         if(index ==1)
@@ -238,9 +219,6 @@ function updateMovement(result, index, options)
             arduino = movementContainer[movementContainer.length -1][1];
 
         }
-
-
-
         Add(movementContainer, [date.toString().substr(0,24), arduino, parseFloat(phone_1)])
         lineChart(movementContainer, "movement_chart", options);
     }
@@ -308,23 +286,22 @@ function updateHue(result)
     var element = document.getElementById('hue_chart')
     if(typeof(element) != 'undefined' && element != null)
     {
-    var power_state;
-    var brightness;
-    var hue;
-    var saturation;
-    
-    var date = new Date(result.timestamp*1000)
-    power_state = result.command.power_state;
-    brightness = result.command.brightness;
-    hue = result.command.hue;
-    saturation = result.command.saturation;
-   
-    
-    Add(hueContainer, [date.toString().substr(0,24), parseFloat(power_state), parseFloat(brightness), parseFloat(hue), parseFloat(saturation)])
-    
-    lineChart(hueContainer, "hue_chart", options)
+        var power_state;
+        var brightness;
+        var hue;
+        var saturation;
+
+        var date = new Date(result.timestamp*1000)
+        power_state = result.command.power_state;
+        brightness = result.command.brightness;
+        hue = result.command.hue;
+        saturation = result.command.saturation;
+
+
+        Add(hueContainer, [date.toString().substr(0,24), parseFloat(power_state), parseFloat(brightness), parseFloat(hue), parseFloat(saturation)])
+
+        lineChart(hueContainer, "hue_chart", options)
     }
-    
 }
 
 function updateBlinds(result)
@@ -332,24 +309,15 @@ function updateBlinds(result)
     var element = document.getElementById('blinds_chart')
     if(typeof(element) != 'undefined' && element != null)
     {
+        var state;
+        var date = new Date(result.timestamp*1000)
 
-    var state;
-    
-    var date = new Date(result.timestamp*1000)
-    
-    state = result.command
-    
-    
-    Add(blindsContainer, [date.toString().substr(0,24), parseFloat(state)])
-    
-    lineChart(blindsContainer, "blinds_chart", options)
+        state = result.command
+        Add(blindsContainer, [date.toString().substr(0,24), parseFloat(state)])
+
+        lineChart(blindsContainer, "blinds_chart", options)
     }
 }
-
-    
-    
-
-
 
 function updatePeopleCount(result) 
 {
@@ -392,21 +360,17 @@ function updateEyeContact(result)
     var element = document.getElementById('chart_div')
     if(typeof(element) != 'undefined' && element != null)
     {
-     
-        
         var detected_faces;
         var eye_contacts;
         var looking_towards_camera;
         var date = new Date(result.timestamp * 1000);
-        
+
         detected_faces = result.data.detected_faces;
         eye_contacts = result.data.eye_contacts;
         looking_towards_camera = result.data.looking_towards_camera;
-        
+
         Add(eyeContactContainer, [date.toString().substr(0,24), parseFloat(detected_faces), parseFloat(eye_contacts), parseFloat(looking_towards_camera)])
-        
-        lineChart(eyeContactContainer, "eye_chart", options)
-        
-        
+
+        steppedAreaChart(eyeContactContainer, "eye_chart", null)
     }
 }

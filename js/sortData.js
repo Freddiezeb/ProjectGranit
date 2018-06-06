@@ -66,6 +66,17 @@ function steppedArea()
 {
     var element = document.getElementById('chart_div')
 
+    
+//    if(array === null){
+//        array = [
+//            ["", ""],
+//            [NaN , NaN],
+//            [NaN , NaN],
+//            [NaN , NaN]
+//        ];
+//    }
+
+    
     var array = [
         ['a','d'],
         ['w',7.9],
@@ -96,7 +107,8 @@ if(page == "divs.html")
 }
 if(page == "camera.html")
 {
-   lineChart(null, "eye_chart", null)
+//   lineChart(null, "eye_chart", null)
+    steppedAreaChart(null, "eye_chart", null);
 }
 
 if(page == "custom.html")
