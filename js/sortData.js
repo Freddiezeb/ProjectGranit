@@ -82,7 +82,7 @@ function steppedArea()
         };
 
         var chart = new google.visualization.SteppedAreaChart(document.getElementById('chart_div'));
-          chart.draw(data, options);
+          //chart.draw(data, options);
          
 }
 if(page == "divs.html")
@@ -124,12 +124,12 @@ function CallFunction(functionName, functionArgument)
 //The update...Chart methods is placed in a seperate .js for more feasable stucture
 function arduino_due_1(result)
 {
-    var date = new Date(result.timestamp *999);
+    var date = new Date(1528214746 *999);
     console.log("arduino_due_1");
     console.log(result);
     if(first)
         {
-             fakehistoricadata(date)
+             fakehistoricadata(date.toString().substr(0,24))
             first = false
         }
    
@@ -171,16 +171,17 @@ function lab_state(result)
 {
     console.log("lab_state")
     console.log(result);
+    updateLabState(result);
 }
 
 //This method gives us all the data from phone_1
 //So this is where we do everything related to this data
 function phone_1(result)
 {
-    var date = new Date(result.timestamp *999);
+    var date = new Date(1528214746 *999);
       if(first)
         {
-             fakehistoricadata(date)
+             fakehistoricadata(date.toString().substr(0,24))
             first = false
         }
     console.log("phone_1")
@@ -208,15 +209,17 @@ function axis_old_camera(result)
 //So this is where we do everything related to this data
 function sensmitter_1(result)
 {
-    var date = new Date(result.timestamp *999);
+    var date = new Date(1528214746 *999);
       if(first)
         {
-             fakehistoricadata(date)
+             fakehistoricadata(date.toString().substr(0,24))
             first = false
         }
     updateLightLevel(result, 1, options)
     updateTemperature(result,1, options)
     updateHumidity(result, 1, options)
+    updatePressure(result, 1, options)
+    console.log(result)
    
     
 }
@@ -225,15 +228,17 @@ function sensmitter_1(result)
 //So this is where we do everything related to this data
 function sensmitter_2(result)
 {
-    var date = new Date(result.timestamp *999);
+    var date = new Date(1528214746 *999);
       if(first)
         {
-             fakehistoricadata(date)
+             fakehistoricadata(date.toString().substr(0,24))
             first = false
         }
     updateLightLevel(result, 2, options)
     updateTemperature(result,2, options)
      updateHumidity(result, 2, options)
+   
+     console.log(result)
     
 }
 
@@ -241,15 +246,17 @@ function sensmitter_2(result)
 //So this is where we do everything related to this data
 function sensmitter_3(result)
 {
-    var date = new Date(result.timestamp *999);
+    var date = new Date(1528214746 *999);
       if(first)
         {
-             fakehistoricadata(date)
+             fakehistoricadata(date.toString().substr(0,24))
             first = false
         }
     updateLightLevel(result, 3, options)
     updateTemperature(result,3, options)
      updateHumidity(result, 3, options)
+    
+     console.log(result)
    
 }
 
@@ -257,10 +264,10 @@ function sensmitter_3(result)
 //So this is where we do everything related to this data
 function cameraACCC8E7E6E9F(result)
 {
-    var date = new Date(result.timestamp *999);
+    var date = new Date(1528214746 *999);
       if(first)
         {
-             fakehistoricadata(date)
+             fakehistoricadata(date.toString().substr(0,24))
             first = false
         }
     console.log("cameraACCC8E7E6E9F")
@@ -289,9 +296,18 @@ function user_feedback(result)
 //Used in all of the update...Chart.js
 function AddToArray(array, data, maxLenght)
 {
-    array.push(data);
+   
+                array.push(data);
+
     if(array.length > maxLenght)
     {
-        array.shift();
+        for(var i = 1; i < array.length - 1; i++)
+        {
+            for(var j = 0; j < array[i].length; j++)
+                {
+                    array[i][j] = array[i + 1][j]
+                }
+        }
+            array.pop()
     }
 }

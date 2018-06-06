@@ -2,7 +2,7 @@
 
 
 var temperatureContainer = [];
-temperatureContainer.push(["Time", "Sensmitter1", "Sensmitter2", "Sensmitter3", "arduino"]);
+temperatureContainer.push(["Time","Sensmitter1", "Sensmitter2", "Sensmitter3", "arduino"]);
 
 var lightLevelContainer = [];
 lightLevelContainer.push(["Time", "Sensmitter1", "Sensmitter2", "Sensmitter3"]);
@@ -17,7 +17,7 @@ var soundLevelContainer = [];
 soundLevelContainer.push(["Time", "arduino","phone_1" ]);
 
 var pressureContainer = [];
-pressureContainer.push(["Time", "Sensmitter1", "Sensmitter2", "Sensmitter3"]);
+pressureContainer.push(["Time", "Sensmitter1"]);
 
 var numPeopleContainer = [];
 numPeopleContainer.push(["Time", "camera"]);
@@ -30,7 +30,7 @@ function fakehistoricadata(date)
       humidityContainer.push([date, 20, 25 , 19, 20]);
       movementContainer.push([date, 0, 0]);
       soundLevelContainer.push([date, 66, 56]);
-      pressureContainer.push([date, 30, 45 , 35 ]);
+      pressureContainer.push([date, 1000]);
       numPeopleContainer.push([date, 2]);
         
   
@@ -66,10 +66,27 @@ function updateLightLevel(result, index, options)
             sensmitter2 = lightLevelContainer[lightLevelContainer.length -1][2];
         }
     
-    lightLevelContainer.push([date, sensmitter1, sensmitter2 , sensmitter3 ]);
+
+             Add(lightLevelContainer, [date.toString().substr(0,24), parseFloat(sensmitter1), parseFloat(sensmitter2) , parseFloat(sensmitter3) ], 20)
     lineChart(lightLevelContainer, "x_level_light_chart", options);
+            
          }
 }
+
+function Add(array, data, maxLenght)
+{
+    
+                
+    array.push(data)
+                           
+    if(array.length > maxLenght)
+    {
+
+            array.splice(1,1);
+    }
+}
+
+
 
 function updateTemperature(result, index, options)
 {
@@ -84,6 +101,8 @@ function updateTemperature(result, index, options)
     
     
     var date = new Date(result.timestamp * 1000);
+             
+             
         if(index ==1)
         {
             sensmitter1 = result.data.temperature;
@@ -108,7 +127,8 @@ function updateTemperature(result, index, options)
     
         if(index==4)
         {
-            arduino = result.data.temperature
+            
+            arduino = result.data.temperature;
             sensmitter3 = temperatureContainer[temperatureContainer.length -1][3];
             sensmitter1 = temperatureContainer[temperatureContainer.length -1][1];
             sensmitter2 = temperatureContainer[temperatureContainer.length -1][2];
@@ -116,8 +136,14 @@ function updateTemperature(result, index, options)
             
         }
     
-    temperatureContainer.push([date, sensmitter1, sensmitter2 , sensmitter3, arduino]);
+    //temperatureContainer.push([date, sensmitter1, sensmitter2 , sensmitter3, arduino]);
+             Add(temperatureContainer,[date.toString().substr(0,24), parseFloat(sensmitter1), parseFloat(sensmitter2) , parseFloat(sensmitter3), arduino],20)
     lineChart(temperatureContainer, "temperature_chart", options);
+              console.log(temperatureContainer)
+             console.log(result.data.temperature)
+             console.log(sensmitter1)
+             console.log(sensmitter2)
+             console.log(sensmitter3)
          }
   
 
@@ -168,8 +194,9 @@ function updateHumidity(result, index, options)
             
         }
     
-    temperatureContainer.push([date, sensmitter1, sensmitter2 , sensmitter3, arduino]);
-    lineChart(temperatureContainer, "humidity_chart", options);
+    //humidityContainer.push([date, sensmitter1, sensmitter2 , sensmitter3, arduino]);
+             Add(humidityContainer,[date.toString().substr(0,24),parseFloat(sensmitter1), parseFloat(sensmitter2) , parseFloat(sensmitter3), arduino], 20)
+    lineChart(humidityContainer, "humidity_chart", options);
          }
 
 }
@@ -193,13 +220,14 @@ function updateMovement(result, index, options)
         }
      if(index ==2)
         {
-            phone_1 = result.data.movement;
+            phone_1 = result.data.device_movement;
             arduino = movementContainer[movementContainer.length -1][1];
          
         }
   
     
-    movementContainer.push([date, arduino, phone_1 ]);
+    
+             Add(movementContainer, [date.toString().substr(0,24), arduino, parseFloat(phone_1)])
     lineChart(movementContainer, "movement_chart", options);
          }
 
@@ -230,7 +258,9 @@ function updateSoundLevel(result, index, options)
         }
   
     
-    soundLevelContainer.push([date, arduino, phone_1 ]);
+  
+             
+             Add(soundLevelContainer, [date.toString().substr(0,24), arduino, parseFloat(phone_1)])
     lineChart(soundLevelContainer, "sound_level_chart", options);
          }
 
@@ -247,29 +277,23 @@ function updatePressure(result, index, options)
     var sensmitter3
     
     var date = new Date(result.timestamp * 1000);
-        if(index ==1)
-        {
+       
             sensmitter1 = result.data.pressure;
-            sensmitter2 = pressureContainer[pressureContainer.length -1][2];
-            sensmitter3 = pressureContainer[pressureContainer.length -1][3];
-        }
-     if(index ==2)
-        {
-            sensmitter2 = result.data.pressure;
-            sensmitter1 = pressureContainer[pressureContainer.length -1][1];
-            sensmitter3 = pressureContainer[pressureContainer.length -1][3];
-        }
-      if(index ==3)
-        {
-            sensmitter3 = result.data.pressure;
-            sensmitter1 = pressureContainer[pressureContainer.length -1][1];
-            sensmitter2 = pressureContainer[pressureContainer.length -1][2];
-        }
-    
-    pressureContainer.push([date, sensmitter1, sensmitter2 , sensmitter3 ]);
+
+    Add(pressureContainer, [date.toString().substr(0,24), parseFloat(sensmitter1)], 20);
     lineChart(pressureContainer, "pressure_chart", options);
          }
 
+}
+
+function updateLabState(result)
+{
+   
+    if(typeof(element) != 'undefined' && element != null)
+         {
+             
+             
+         }
 }
 
 function updatePeopleCount(result) 
