@@ -186,6 +186,7 @@ h1{
   text-align: center;
   margin: 5% auto 0% auto;
 }
+
 #pressure_chart{
   width: 220px;
   height: 220px;
@@ -282,7 +283,7 @@ h1{
 #btnLight, #btnMovement, #btnSound{
     background-color: whitesmoke
 }
-#btnNrPpl{
+#btnCamera, #btnDivs{
     background-color: whitesmoke
 }
 #backBtn{

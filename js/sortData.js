@@ -62,52 +62,18 @@ if(page == "activity.html")
     lineChart(null, "movement_chart", null);
     lineChart(null, "sound_level_chart", null);
 }
-function steppedArea()
-{
-    var element = document.getElementById('chart_div')
 
-    
-//    if(array === null){
-//        array = [
-//            ["", ""],
-//            [NaN , NaN],
-//            [NaN , NaN],
-//            [NaN , NaN]
-//        ];
-//    }
-
-    
-    var array = [
-        ['a','d'],
-        ['w',7.9],
-        ['w',6.5],
-        ['w',6.4],
-        ['w',6.2]
-    ];
-    var data = google.visualization.arrayToDataTable(array);
-    var options = {
-        title: 'Number of people in room',
-        vAxis: {title: ''},
-        isStacked: true,
-        backgroundColor: 'transparent'
-    };
-
-    var chart = new google.visualization.SteppedAreaChart(document.getElementById('chart_div'));
-    chart.draw(data, options);
-
-}
 if(page == "divs.html")
 {
     lineChart(null, "hue_chart", null)
     lineChart(null, "blinds_chart", null)
-    steppedArea()
+    lineChart(null, "distance_chart", null)
     
    
 
 }
 if(page == "camera.html")
 {
-//   lineChart(null, "eye_chart", null)
     steppedAreaChart(null, "eye_chart", null);
 }
 
@@ -120,7 +86,11 @@ if(page == "custom.html")
     lineChart(null, "x_level_light_chart", null);
     lineChart(null, "movement_chart", null);
     lineChart(null, "sound_level_chart", null);
-    steppedArea()
+    steppedAreaChart(null, "eye_chart", null);
+    lineChart(null, "blinds_chart", null)
+    lineChart(null, "hue_chart", null)
+    lineChart(null, "distance_chart", null)
+   
 
 }
 
@@ -155,7 +125,7 @@ function arduino_due_1(result)
 
     updateMovement(result, 1, options)
     updateHumidity(result, 4, options )
-
+    updateDistance(result, options)
     updateTemperature(result,4, options)
     updateSoundLevel(result, 1, options)
 }

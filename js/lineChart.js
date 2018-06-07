@@ -32,10 +32,10 @@ function lineChart(array, element, options, lenght)
         columnsTable.addColumn('number', 'colIndex');
         columnsTable.addColumn('string', 'colLabel');
         var initState= {selectedValues: []};
-        // put the columns into this data table (skip column 0)
-        for (var i = 1; i < data.getNumberOfColumns(); i++) {
+        
+        for (var i = 1; i < data.getNumberOfColumns(); i++)
+        {
             columnsTable.addRow([i, data.getColumnLabel(i)]);
-            // you can comment out this next line if you want to have a default selection other than the whole list
             initState.selectedValues.push(data.getColumnLabel(i));
         }
 
@@ -66,7 +66,6 @@ function lineChart(array, element, options, lenght)
                 row = columnsTable.getFilteredRows([{column: 1, value: state.selectedValues[i]}])[0];
                 view.columns.push(columnsTable.getValue(row, 0));
             }
-            // sort the indices into their original order
 
             view.columns.sort(function (a, b) {
                 return (a - b);
@@ -88,38 +87,5 @@ function lineChart(array, element, options, lenght)
     }
 
 
-
-    //If we don't send in any options then we use the default options
-    if(options === null){
-        options = {
-            legend:{position:'top'},
-            //Backgroundcolor for linecharts
-            backgroundColor:'transparent',
-            //Horisontal axis
-            hAxis:{
-                //textstyle
-                textStyle: {
-                    fontName: 'Roboto',
-                    fontSize: 12,
-                    // The color of the text.
-                    color: '#fff'
-                }
-            },
-            //vertical axis
-            vAxis:{
-                //textstyle
-                textStyle: {
-                    fontName: 'Roboto',
-                    fontSize: 12,
-                    // The color of the text.
-                    color: '#fff'
-                }
-            }
-        }
-        //chart.draw(data, options);
-    }
-    else{
-        //chart.draw(data, options);
-    }
 }
 

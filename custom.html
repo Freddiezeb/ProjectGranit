@@ -68,13 +68,13 @@
 
             <br>
             <p class="customp">CAMERA</p>
-            <div class="bubbleBorder" id="btnNrPpl" onclick="toggleChart('chartNrPpl', 'btnNrPpl')">
+            <div class="bubbleBorder" id="btnCamera" onclick="toggleChart('chartCamera', 'btnCamera')">
               <img class="icon" src="images/camera.png" alt="camera">
               </div>
           </div>
           <div class="nav4">
             <p class="customp">DIVS</p>
-            <div class="bubbleBorder" id="btnNrPpl" onclick="toggleChart('chartNrPpl', 'btnNrPpl')">
+            <div class="bubbleBorder" id="btnDivs" onclick="toggleChart('chartDivs', 'btnDivs')">
                 <!-- <p>people</p></a> -->
                 <img class="icon" src="images/peopleB.png" alt="people">
             </div>
@@ -119,13 +119,31 @@
               </div>
               </div>
             </form>
-
+            
+              <div class="charts" id="chartCamera" style="display: none" >
+                                    <p> Eye Contact</p>
+                    <div id="eye_chart" style="width: 600px; height: 300px;" >  </div>
+                <div id="eye_chartfilter" hidden></div>
+              
+              
+              
+              </div>
+              
+              
+              
+              
               <!-- DIV CHART -->
               <!-- NUMBERS OF PEOPLE/ HISTORY -->
-              <div class="charts" id="chartNrPpl" style="display: none">
-                  <p id="customP">Number of people</p>
-                  <div id="number_of_people_chart" style="width: 360px; height: 200px;"></div>
+              <div class="charts" id="chartDivs" style="display: none;">
+                  <p id="customP">Div</p>
+                  <div id="nrOfPeople" style="width: 360px; height: 200px;"></div>
+                  <div id="labState" style="width: 360px; height: 200px;"></div>
+                  <div id="uFlabState" style="width: 360px; height: 200px;"></div>
+                  <div id="hue_chart" style="width: 360px; height: 200px;"></div>
+                  <div id="blinds_chart" style="width: 360px; height: 200px;"></div>
+                  <div id="distance_chart" style="width: 360px; height: 200px;"></div>
               </div>
+              
 
               <!-- ACTIVITY CHART -->
 
@@ -181,16 +199,11 @@
         <script src="js/customCharts.js" type="text/javascript"></script>
         <script src="js/histogramChart.js" type="text/javascript"></script>
         <script src="js/lineChart.js" type="text/javascript"></script>
-        <script src="js/gaugeChart.js" type="text/javascript"></script>
-        <script src="js/updateCharts/updateTempChart.js" type="text/javascript"></script>
-        <script src="js/updateCharts/updateHumidityChart.js" type="text/javascript"></script>
-        <script src="js/updateCharts/updatePressureChart.js" type="text/javascript"></script>
-        <script src="js/updateCharts/updateLightLevelChart.js" type="text/javascript"></script>
-        <script src="js/updateCharts/updateMovementChart.js" type="text/javascript"></script>
-        <script src="js/updateCharts/updateSoundLevelChart.js" type="text/javascript"></script>
+        <script src="js/steppedAreaChart.js" type="text/javascript"></script>
         <script src="js/logic.js" type="text/javascript"></script>
         <script src="js/sortData.js" type="text/javascript"></script>
         <script src="js/updateChart.js" type="text/javascript"></script>
+        
 
         <!-- Från https://loading.io/progress/ -->
         <script type="text/javascript" src="libs/loading-bar/loading-bar.js"></script>

@@ -31,6 +31,9 @@ blindsContainer.push(["Time", "state"])
 var eyeContactContainer =[]
 eyeContactContainer.push(["Time", "detected_faces", "eye_contacts", "looking_towards_camera"])
 
+var distanceContainer =[]
+    distanceContainer.push(["Time", "arduino"])
+
 function fakehistoricadata(date)
 {
 
@@ -44,6 +47,7 @@ function fakehistoricadata(date)
     hueContainer.push([date, 10,10,10,0])
     blindsContainer.push([date, 1, 0, 0])
     eyeContactContainer.push([date, 2, 1, 1])
+    distanceContainer.push([date, 50])
 }
 
 function updateLightLevel(result, index, options)
@@ -319,9 +323,29 @@ function updateBlinds(result)
     }
 }
 
+function updateDistance(result)
+{
+     var element = document.getElementById("distance_chart")
+     if(typeof(element) != 'undefined' && element != null)
+    {
+    
+    var arduino 
+    var date = new Date(result.timestamp * 1000);
+    
+
+        arduino = result.data.distance
+        
+        Add(distanceContainer, [date.toString().substr(0,24), parseFloat(arduino)])
+        
+        lineChart(distanceContainer, "distance_chart", options)
+    }
+    
+    
+}
+
 function updatePeopleCount(result) 
 {
-    var element = document.getElementById('chart_div')
+    var element = document.getElementById('nrOPeople')
     if(typeof(element) != 'undefined' && element != null)
     {
         var date = new Date(result.timestamp * 1000);
@@ -334,7 +358,7 @@ function updatePeopleCount(result)
         };
 
         numPeopleContainer.push([date, camera ]);
-        var chart = new google.visualization.SteppedAreaChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.SteppedAreaChart(document.getElementById('nrOfPeople'));
         chart.draw(numPeopleContainer, options);
     }
 }
@@ -357,7 +381,7 @@ function updateUserFeedback(result)
 
 function updateEyeContact(result)
 {
-    var element = document.getElementById('chart_div')
+    var element = document.getElementById('eye_chart')
     if(typeof(element) != 'undefined' && element != null)
     {
         var detected_faces;
