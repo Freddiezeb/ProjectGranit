@@ -94,7 +94,6 @@
   background: radial-gradient(circle at 100px 100px, #dea7c6, #a8648b);
   box-shadow: 0 8px 20px -6px black;
   transform: scale(1.5);
-
 }
 #divs:hover{
   transform: scale(1.5);
@@ -443,7 +442,7 @@ color: darkslategrey
 .google-visualization-controls-categoryfilter {
   font-size: 15px !important;
     z-index: 0;
-   
+
 }
 
 .labstate{
@@ -465,7 +464,7 @@ color: darkslategrey
 {
     z-index: 0;
     background-color: skyblue;
-    color: white; 
+    color: white;
 }
 
 .goog-inline-block.goog-link-button
@@ -480,8 +479,6 @@ color: darkslategrey
     text-indent: 100%;
     white-space:nowrap;
     overflow: hidden;
-    
-        
 }
 
 
@@ -556,7 +553,7 @@ z-index: 1;
   }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 1150px) {
   #radett, #radtva{
     width: 490px;
   }
